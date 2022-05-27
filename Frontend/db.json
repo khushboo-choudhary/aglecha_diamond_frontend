@@ -1,0 +1,471 @@
+{
+  "earings": [
+    {
+      "image": "https://5.imimg.com/data5/WS/JE/MY-11009625/designer-diamond-earring-500x500.jpg",
+      "description": "Designer Diamonds",
+      "price": {"mrp": 1499,
+        "discount": 20,
+        "sp": 199},
+      "customer_rating": 3.9,
+      "product_details": [
+        "Designer Product made form India"
+      ],
+      "id": 1,
+      "quantity": 1,
+      "tag": "earings"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVVUs8C-7N0udZz7icaqyX69Emjwd-RPPbRw&usqp=CAU",
+      "description": "Box Diamonds",
+      "price": {
+        "mrp": 2999,
+        "discount": 40,
+        "sp": 1799
+      },
+      "customer_rating": 4.0,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 2,
+      "quantity": 1,
+      "tag": "earings"
+    },
+
+    {
+      "image": "data:image/jpeg;base64,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",
+      "description": "Real Diamonds",
+      "price": {
+        "mrp": 549,
+        "discount": 270,
+        "sp": 239},
+      "customer_rating": 4.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 3,
+      "quantity": 1,
+      "tag": "earings"
+    },
+    {
+      "image": "data:image/jpeg;base64,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",
+      "description": "Modern Diamonds",
+      "price": {
+        "mrp": 1299,
+        "discount": 56,
+        "sp": 571
+      },
+      "customer_rating": 3.5,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 4,
+      "quantity": 1,
+      "tag": "earings"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQSbfhWH3YF3--50-18u-UgIf1QvdytWCqFw&usqp=CAU",
+      "description": "Bhayal Diamonds",
+      "price": {"mrp": 2699,
+        "discount": 80,
+        "sp": 599},
+      "customer_rating": 3.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 5,
+      "quantity": 1,
+      "tag": "earings"
+    },
+    {
+      "image": "data:image/jpeg;base64,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",
+      "description": "Small and Simple Diamonds",
+      "price": {"mrp": 1399,
+        "discount": 50,
+        "sp": 399},
+      "customer_rating": 4.6,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 6,
+      "quantity": 1,
+      "tag": "earings"
+    },
+
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKCWPI5nm5maW8rGk--sPyKXKHY2QqJrQJVQ&usqp=CAU",
+      "description": "Leaf Pattern Diamonds",
+      "price": {"mrp": 1376,
+        "discount": 50,
+        "sp": 299},
+      "customer_rating": 3.8,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 7,
+      "quantity": 1,
+      "tag": "earings"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmYL_iH0Jw5jqB25raiz7beV69s-ziMDQMNw&usqp=CAU",
+      "description": "Traditional Paatern Diamonds",
+      "price": {"mrp": 6579,
+        "discount": 70,
+        "sp": 99},
+      "customer_rating": 4.5,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 8,
+      "quantity": 1,
+      "tag": "earings"
+    }
+  ],
+  "bracelets": [
+    {
+      "image": "data:image/jpeg;base64,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",
+      "description": "Round Flower Diamond",
+      "price": {"mrp": 1599,
+        "discount": 65,
+        "sp": 259},
+      "customer_rating": 3.8,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 9,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+    {
+      "image": "https://5.imimg.com/data5/BQ/AE/PQ/SELLER-84810535/designer-diamond-bracelet-500x500.jpg",
+      "description": "Real Diamond",
+      "price": {"mrp": 4499,
+        "discount": 80,
+        "sp": 899},
+      "customer_rating": 3.5,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 10,
+      "quantity": 1,
+      "tag": "bracelets"   
+    },
+
+    {
+      "image": "https://i.pinimg.com/236x/26/3c/5e/263c5e5459a231f94bc54e26fca65741--exclusive-collection-diamond-bangle.jpg",
+      "description": "Real leaf pattern Diamond",
+      "price": {"mrp": 9876,
+        "discount": 75,
+        "sp": 349},
+      "customer_rating": 4.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 11,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR640HGr7Kr7JWDjyCfDFOrrV28oXqoFZ7V_ShIC44icoYNLlcMHeG7Ai-tai407IZX_No&usqp=CAU",
+      "description": "Flower pattern Diamond",
+      "price": {"mrp": 8799,
+        "discount": 70,
+        "sp": 759},
+      "customer_rating":4.5,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 12,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+    {
+      "image": "https://www.vaibhavjewellers.com/pub/media/catalog/product/1/7/177VG461-PTO1.jpg",
+      "description": "Royal Diamond",
+      "price": {"mrp": 6799,
+        "discount": 45,
+        "sp": 599},
+      "customer_rating": 3.4,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 13,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+    {
+      "image": "https://www.vaibhavjewellers.com/pub/media/catalog/product/1/7/177VG461-PTO1.jpg",
+      "description": "Simple Diamond",
+      "price": {"mrp": 5499,
+        "discount": 60,
+        "sp": 569},
+      "customer_rating": 3.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 14,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+
+    {
+      "image": "https://5.imimg.com/data5/OS/AU/MY-3312768/rose-gold-diamond-bracelet-500x500-500x500.jpg",
+      "description": "Fancy Diamond",
+      "price": {"mrp": 2399,
+        "discount": 60,
+        "sp": 899},
+      "customer_rating": 3.9,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 15,
+      "quantity": 1,
+      "tag": "bracelets"
+    },
+    {
+      "image": "data:image/jpeg;base64,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",
+      "description": "Modern Diamond",
+      "price": {"mrp": 5699,
+        "discount": 40,
+        "sp": 299},
+      "customer_rating": 3.1,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 16,
+      "quantity": 1,
+      "tag": "bracelets"
+    }
+  ],
+  "chains": [
+    {
+      "image": "https://www.vaibhavjewellers.com/pub/media/catalog/product/1/5/159VG4270-PTO1.jpg",
+      "description": "Fancy Chains Diamond",
+      "price": {"mrp": 4909,
+        "discount": 60,
+        "sp": 679},
+      "customer_rating": 4.7,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 17,
+      "quantity": 1,
+      "tag": "chains"
+    },
+    {
+      "image": "https://www.vaibhavjewellers.com/pub/media/catalog/product/1/5/159VG4270-PTO1.jpg",
+      "description": "Modern Chains Diamond",
+      "price": {"mrp": 4599,
+        "discount": 60,
+        "sp": 699},
+      "customer_rating": 4.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 18,
+      "quantity": 1,
+      "tag": "chains"
+    },
+
+    {
+      "image": "https://cf.shopee.in/file/2c33b076751d4963aa788a8768751b63",
+      "description": "Sterlling Chains Diamond",
+      "price": {"mrp": 5999,
+        "discount": 50,
+        "sp": 999},
+      "customer_rating": 3.7,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 19,
+      "quantity": 1,
+      "tag": "chains"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-reQSSTLXgcyTVPVKvQ0WIGwuifcoDk1F8Q&usqp=CAU",
+      "description": "American Chains Diamond",
+      "price": {"mrp": 3499,
+        "discount": 60,
+        "sp": 399},
+      "customer_rating": 3.4,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 20,
+      "quantity": 1,
+      "tag": "chains"
+    },
+    {
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61TSUBG%2B4LL._UL1500_.jpg",
+      "description": "Fancy Chains Diamond",
+      "price": {"mrp": 7899,
+        "discount": 50,
+        "sp": 599},
+      "customer_rating": 3.9,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 21,
+      "quantity": 1,
+      "tag": "chains"
+    },
+    {
+      "image": "https://www.orra.co.in/pub/media/catalog/product/o/n/onk20015-a-thumbnail.jpg",
+      "description": "Simple Chains Diamond",
+      "price": {"mrp": 9699,
+        "discount": 55,
+        "sp": 399},
+      "id": 22,
+      "customer_rating": 3.5,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "quantity": 1,
+      "tag": "chains"
+    },
+
+    {
+      "image": "https://www.orra.co.in/pub/media/catalog/product/o/n/onk20016-a.jpg",
+      "description": "Star Chains Diamond",
+      "price": {"mrp": 1456,
+        "discount": 40,
+        "sp": 299},
+      "customer_rating": 4.1,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 23,
+      "quantity": 1,
+      "tag": "chains"
+    },
+    {
+      "image": "https://www.orra.co.in/pub/media/catalog/product/o/s/osn18099-a.jpg",
+      "description": "Box Chains Diamond",
+      "price": {"mrp": 3498,
+        "discount": 30,
+        "sp": 599},
+      "customer_rating": 3.2,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 24,
+      "quantity": 1,
+      "tag": "chains"
+    }
+  ],
+  "rings": [
+    {
+      "image": "https://5.imimg.com/data5/FN/DJ/MY-7122602/1-500x500.png",
+      "description": "Fancy Engagement Ring",
+      "price": {"mrp": 1679,
+        "discount": 68,
+        "sp": 679},
+      "customer_rating": 3.6,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 25,
+      "quantity": 1,
+      "tag": "rings"
+    },
+    {
+      "image": "https://kinclimg4.bluestone.com/f_jpg,c_scale,w_515,b_rgb:f0f0f0/giproduct/BIDG0319R196_YAA18DIG6XXXXXXXX_ABCD00-PICS-00001-1024-22561.png",
+      "description": "The Diamond Ring",
+      "price": {"mrp": 1989,
+        "discount": 70,
+        "sp": 769},
+      "customer_rating": 3.8,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 26,
+      "quantity": 1,
+      "tag": "rings"
+    },
+
+    {
+      "image": "https://5.imimg.com/data5/XX/KP/GLADMIN-22996681/diamond-ring-228-500x500.png",
+      "description": "Golden Diamond Ring",
+      "price": {"mrp": 1899,
+        "discount": 80,
+        "sp": 989},
+      "customer_rating": 4.4,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 27,
+      "quantity": 1,
+      "tag": "rings"
+    },
+    {
+      "image": "https://cdn1.jewelxy.com/live/img/business_product/DE0AwDhP5k_20190228200117.jpg",
+      "description": "Round Fancy Ring",
+      "price": {"mrp": 5649,
+        "discount": 75,
+        "sp": 679},
+      "customer_rating": 3.6,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 28,
+      "quantity": 1,
+      "tag": "rings"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXmWoVjkioAq9wEMcxFqhGjFFuP80tg0P41U67y2Vt6Svpya6x589ZAgTZwSORH7msxgc&usqp=CAU",
+      "description": "Floral Design Ring",
+      "price": {"mrp": 8769,
+        "discount": 50,
+        "sp": 979},
+      "customer_rating": 3.4,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 29,
+      "quantity": 1,
+      "tag": "rings"
+    },
+    {
+      "image": "https://cdn-media.vaibhavjewellers.com/pub/media/catalog/product/cache/2765542505660baab28ecd555e27366e/1/4/148VG9294-PTO3.JPG",
+      "description": "Unique Engagement Ring",
+      "price": {"mrp": 1299,
+        "discount": 60,
+        "sp": 599},
+      "customer_rating": 3.3,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 30,
+      "quantity": 1,
+      "tag": "rings"
+    },
+
+    {
+      "image": "https://cdn.fascinatingdiamonds.com/blog/wp-content/uploads/2021/03/Womens-Diamond-Engagement-Rings.jpg",
+      "description": "Women's Diamond Rings",
+      "price": {"mrp": 1459,
+        "discount": 60,
+        "sp": 675},
+      "customer_rating": 3.9,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 31,
+      "quantity": 1,
+      "tag": "rings"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61fCp1W6HlL._UL1050_.jpg",
+      "description": "Simulated Diamond Ring",
+      "price": {"mrp": 1769,
+        "discount": 55,
+        "sp": 799},
+      "customer_rating": 3.9,
+      "product_details": [
+        "Navy Blue dark wash 5-pocket mid-rise jeans, clean look, no fade, has a button and zip closure, and waistband with belt loops"
+      ],
+      "id": 32,
+      "quantity": 1,
+      "tag": "rings"
+    }
+  ]
+}

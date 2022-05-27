@@ -1,0 +1,102 @@
+
+.NavBar{
+    
+    display: flex;
+    justify-content: space-evenly;
+    position: fixed;
+    z-index: 3;
+    height: 70px;
+    margin: auto;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+    top:0;
+    width: 100%;
+    background-color: whitesmoke;
+}
+
+.FontStyleName{
+  font-family: 'Water Brush', cursive;
+  font-size: 30px;
+  cursor: pointer;
+}
+.FontStyleName:hover{
+  color: navy;
+}
+
+input{
+  height: 140%;
+  cursor: pointer;
+}
+
+.avtar{
+    width: 42px;
+    height: 42px;
+    border: 2px solid red;
+    border-radius: 25px;
+    align-content: center;
+    cursor: pointer;
+  
+}
+.avtar>div>p{
+   
+    font-family: 'Koulen', cursive;
+    text-transform: capitalize;
+    margin: -15px;
+    text-align: center;
+    font-size: 29px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+
+.name {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  .name:hover{
+      color: red;   
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+ 
+  .dropdownInside {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .dropdownInside a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdownInside a:hover {background-color: #b3b0b0}
+  
+  .dropdown:hover .dropdownInside {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+  }
+
+  .cursar{
+    cursor: pointer;
+  }
+

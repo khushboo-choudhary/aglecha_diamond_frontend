@@ -1,0 +1,168 @@
+.CategoryHeading{
+    
+    height: 120px;
+    margin-top: 70px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.CategoryHeading:hover{
+    cursor: pointer;
+}
+
+.CategoryHeading>p:nth-child(1){
+  
+    font-family: Jost, sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: #292621;
+    margin: 0px;
+    padding-top: 22px;
+}
+
+.CategoryHeading>p:nth-child(2){
+    
+    font-family: Jost, sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #292621;    ;
+    margin: 0px;
+    margin-top: 20px;
+}
+
+.CategoryBelowCategory{
+    
+    width: 88%;
+    margin: auto;
+    display: flex;
+    margin-top: 3%;
+    
+}
+
+.FilterDiv{
+    width: 22%;
+    height: 920px;
+    padding: 10px;
+    padding-left: 40px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+.checkDivs{
+    background: goldenrod;
+    margin-left: -14%;
+    margin-top: 2%;  
+}
+
+
+.ProductsDiv{
+    
+    width: 100%;
+    height: 100%;
+    display: grid;
+    margin-left: 40px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto ;
+    
+}
+
+.IndividualProd{
+    
+    width: 95%;
+    height: 380px;
+    margin-bottom: 10%;
+    gap: 0% !important;
+}
+
+.IndividualProdImg{
+   
+    width: 100%;
+    height: 65%;
+}
+.IndividualProdImg>img{
+    width: 100%;
+    height: 100%;
+}
+
+.IndividualProdRatings{
+    background: green;
+    color: white;
+    border: none;
+    margin-top: 3%;
+}
+
+.IndividualProdBuyNow{
+    background: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px;
+    width: 150px;
+}
+
+.IndividualProdTitle{
+    /* border: 2px solid peachpuff; */
+    width: 100%;
+    height: 25%;
+    margin: auto;
+    color: navy;
+}
+.IndividualProdTitle>p:nth-child(1){
+    /* border: 2px solid blue; */
+    font-family: Jost, sans-serif;
+    font-weight: bolder;
+    /* font-size: larger; */
+    margin: 0px;
+    margin-top: 5%;
+}
+.IndividualProdTitle>p:nth-child(1):hover{
+    color: red;
+}
+
+.IndividualProdTitle>p:nth-child(2)>span:nth-child(1){
+    /* border: 2px solid blue; */
+    font-family: Jost, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px;
+    margin-top: 5%;
+    margin-right: 5%;
+    color:navy;
+}
+
+.IndividualProdTitle>p:nth-child(2)>span:nth-child(2){
+    /* border: 2px solid blue; */
+    font-family: Jost, sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0px;
+    margin-top: 5%;
+    margin-right: 9%;
+    color: #cebd9c;
+    text-decoration: line-through
+}
+
+
+
+.css-u4tvz2-MuiFormLabel-root {
+    color: rgb(33, 26, 26) !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-weight: bolder !important;
+    font-size: large !important;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    padding: 0;
+    position: relative;
+}
+
+.SpinnerInCategoryDiv{
+    /* border: 2px solid blue; */
+    margin-left: 270px;
+    padding-top: 80%;
+}
+
+.SpinnerInCategory{
+    /* border: 2px solid red; */
+    width: auto;
+    
+    /* margin-left: 100%; */
+}

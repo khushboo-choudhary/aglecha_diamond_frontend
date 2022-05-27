@@ -1,0 +1,106 @@
+.Footer{
+   
+    background-color: navy;
+    color: #ffffff;
+    height: 500px !important;
+    margin-top: 3%;
+   
+}
+
+.Footer>div{
+    display: flex;
+    justify-content: space-evenly;
+    height: 400px;
+}
+
+.Footer>div>div{
+    padding-top: 30px;
+   
+}
+.icon {
+    margin-left: 90px;
+}
+.Footer>div>div>p:nth-child(1){
+    
+    font-family: Jost, sans-serif;
+    font-weight: bolder;
+    font-size: larger;
+    text-align: left;
+    margin-top: 3%;
+    
+}
+
+.Footer>div>div>div>p{
+  
+    font-family: Jost, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: left;
+    line-break: 25%;
+    color: lightgrey;
+    
+}
+
+.Footer>div>div>p{
+   
+    font-family: Jost, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: left;
+    
+}
+
+.Footer>div>div>input{
+    
+    height: 25px;
+    width: 180px;
+    align-content: center;
+    text-align: center;
+    margin-top: 8%;
+}
+.Footer>div>div>button{
+    
+    margin-left: 3%;
+    margin-top: 3%;
+    height: 45px;
+    width: 99px;
+    background-color: #ff2020;
+    color: #ffffff;
+    font-size: large;
+}
+
+
+.Footer2>div{
+   
+    width: 190px !important;
+    height: 240px !important;
+    
+}
+
+
+.Footer2>div>div>p:hover{
+    font-size: 17px; 
+    text-decoration: underline;
+}
+
+.FontStyleNav{
+    font-family: 'Water Brush', cursive;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0%;
+  }
+
+.Foote3{
+    height: 50px !important; 
+}
+
+.Foote3>p{
+    
+    width: 900px;
+    font-family: Jost, sans-serif;
+    font-weight: 400 !important;
+    font-size: 18px;
+    color: #bbb9b5;
+    margin-top: 0%;
+}

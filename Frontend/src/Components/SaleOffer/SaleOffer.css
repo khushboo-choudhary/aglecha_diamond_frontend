@@ -1,0 +1,31 @@
+.SaleOffer{
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    top: 70px;
+    bottom: 70px;
+    background-color: plum;
+    color: navy;
+    font-size: 20px;
+    font-weight: bolder;
+    height: 75px;
+    align-content: center;
+    padding-top: 1%;
+}
+
+.SaleOffer>p{
+   
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.SaleOffer>p>span{
+   
+    text-decoration: underline;
+    color: #b1104b;
+}
+
+.SaleOffer>p>span:hover{
+    word-spacing: 3px;
+   
+}

@@ -1,0 +1,221 @@
+.PaymentPageMain{
+    margin-top: 100px;
+}
+
+.PaymentPageFlex{
+    display: flex;
+    height: auto;
+    width: 88%;
+    margin: auto;
+    margin-top: 3%;
+}
+
+.PaymentDetailsDiv{
+   
+    width: 100%;
+    height: auto;
+    padding-left: 5%;
+    padding-right: 4%;
+    padding-top: 1%;
+}
+
+.bankOfferDiv{
+
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding-left: 3%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+.bankOfferDiv>div>p{
+    
+    margin: 0px;
+    text-align: start;
+    padding-bottom: 1%;
+  
+}
+
+.totolAmt{
+    font-size: 20px;
+}
+
+.chosePaymentopt{
+   
+    text-align: start;
+    padding-left: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+
+.PaymentModeSelectdiv{
+   
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    display: flex;
+}
+.MultiplePayOptions{
+    
+    width: 70%;
+    height: auto;
+    text-align: start;
+    background-color: blue;
+
+}
+.MultiplePayOptions>div>div>p{
+    
+    margin: 0px;
+    padding-left: 3%;
+    padding-top: 7%;
+    padding-bottom: 7%;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+.MultiplePayOptions>div>div:hover{
+   
+    color: red;
+    background: hotpink;
+}
+
+.payOptionDetails{
+   
+    width: 100%;
+    height: auto;
+}
+.paymentHeading{
+
+padding: 5%;
+font-size: larger;
+font-weight: bolder;
+}
+.payOptionDetails>div>div>input{
+    border: 1px solid red;
+    width: 70%;
+    padding: 3%;
+    border-radius: 12px;
+    letter-spacing: 10px;
+    text-align: center;
+}
+.payOptionDetails>div>div>button{
+    border: none;
+    width: 30%;
+    padding: 3%;
+    margin-top: 4%;
+    background-color:  mediumvioletred;
+    color: whitesmoke;
+    font-weight: bold;
+    border-radius: 12px;
+}
+.payOptionDetails>div>div>button:hover{
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.GiftCardDiv{
+    margin-top: 3%;
+    display: flex;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.GiftCardDiv1d{
+    text-align: start;
+    width: 100%;
+    
+}
+.GiftCardDiv2d{
+    text-align: end;
+    width: 100%;
+    font-size: small;
+}
+
+.ProductPricesDiv{
+   
+    width: 60%;
+    height: 100%;
+    padding-bottom: 3%;
+}
+.ProductPricesDivInside{
+    
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+.priceDiv{
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: blueviolet;
+    font-size: 20px;
+}
+
+.ProductFlex{
+    display: flex;
+}
+.ProductFlex>div:nth-child(1){
+    width: 100%;
+    color: black;
+    font-size: 16px;
+    text-align: start;
+}
+.ProductFlex>div:nth-child(2){
+    width: 100%;
+    text-align: end;
+}
+.ProductFlex>div>p{
+    
+    margin: 0px;
+    margin-top: 7%;
+    margin-bottom:7% ;
+}
+
+.ShippingAddress{
+   
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    margin-top: 7%;
+    width: 92%;
+    height: auto;
+    text-align: start;
+    padding-left: 7%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.ShippingAddress>div>p{
+    border: 2px solid transparent;
+    margin: 0px;
+    margin-top: 3%;
+    margin-bottom: 2%;
+}
+
+.noAddressFound{
+    text-align: center;
+}
+.noCartDataFound{
+    padding-bottom: 10%;
+
+}
+
+.marginBtm{
+    
+    border-bottom: 0.1px solid black;
+}
+.redText{
+    color: red;
+    font-weight: bolder;
+}
+.redText:hover{
+    cursor: pointer;
+}
+.greenText{
+    color: rgb(173, 18, 173);
+    font-weight: bold;
+}
+.totolAmt{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.LineonText{
+    text-decoration: line-through;
+}
+

@@ -1,0 +1,78 @@
+.Category {
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.Category>div:nth-child(1) {
+    width: 280px;
+    height: 320px;
+    border: 2px solid gray;
+    background-image: url("https://static6.cilory.com/139495-thickbox_default/american-diamond-earring.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    box-shadow: rgba(60, 60, 93, 0.55) 10px 40px 70px -10px inset, rgba(0, 0, 0, 0.3) 0px 28px 46px -10px inset;
+}
+
+.Category>div:nth-child(2) {
+    width: 280px;
+    height: 320px;
+    border: 2px solid gray;
+    background-image: url("https://thumbs.dreamstime.com/b/jewelry-diamond-bracelet-black-background-42379985.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    box-shadow: rgba(60, 60, 93, 0.55) 10px 40px 70px -10px inset, rgba(0, 0, 0, 0.3) 0px 28px 46px -10px inset;
+}
+
+.Category>div:nth-child(3) {
+    width: 280px;
+    height: 320px;
+    border: 2px solid gray;
+    background-image: url("https://wallpapercave.com/wp/wp2375461.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    box-shadow: rgba(60, 60, 93, 0.55) 10px 40px 70px -10px inset, rgba(0, 0, 0, 0.3) 0px 28px 46px -10px inset;
+}
+
+.Category>div:nth-child(4) {
+    width: 280px;
+    height: 320px;
+    border: 2px solid gray;
+    background-image: url("https://wallpapercave.com/wp/wp5262748.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25px;
+    box-shadow: rgba(60, 60, 93, 0.55) 10px 40px 70px -10px inset, rgba(0, 0, 0, 0.3) 0px 28px 46px -10px inset;
+}
+
+.CategoryName {
+   
+    margin-top: 250px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+
+.CategoryShopNow {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: 900;
+    color: #f3ead8;
+    text-decoration: underline;
+}
+
+.CategoryShopNow:hover {
+    font-size: 24px;
+    font-weight: 900;
+}
