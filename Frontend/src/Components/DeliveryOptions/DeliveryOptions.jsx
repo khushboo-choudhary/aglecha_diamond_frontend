@@ -24,7 +24,7 @@ export default function DeliveryOptions() {
             </div>
 
             <div>
-                <div><img src="https://cdn-icons.flaticon.com/png/512/4641/premium/4641849.png?token=exp=1653641264~hmac=1b6140ef3a25fe648dc3531de85df3f9" alt="" /></div>
+                <div><img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/2x/external-return-web-store-flaticons-lineal-color-flat-icons.png" alt="" /></div>
                 <p className='DeliveryP1'>Exchange Policy</p>
                 <p className='DeliveryP2'>If the customer wishes to exchange any jewellery...</p>
                 <button className="btn">READ MORE</button>
