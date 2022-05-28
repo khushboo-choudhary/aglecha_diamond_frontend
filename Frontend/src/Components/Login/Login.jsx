@@ -53,7 +53,7 @@ export default function Login() {
 
           <Button className='ButtonDiv' variant="contained" color="secondary" onClick={() => handleAdd()} >Login</Button><br />
 
-          <Button className='ButtonDiv' variant="contained" color="secondary"bonClick={() => { navigate("/register") }} >Register</Button><br />
+          <Button className='ButtonDiv' variant="contained" color="secondary" onClick={() => { navigate("/register") }} >Register</Button><br />
 
           <Button className='ButtonDiv' variant="contained" color="secondary" onClick={() =>
             window.open("https://diamond-ecommerce.herokuapp.com/auth/google", "_self")
