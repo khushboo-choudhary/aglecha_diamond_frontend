@@ -37,31 +37,40 @@ router.get("/id/:id", async (req, res) => {
   }
 });
 
-// added filter of category discount rating sorting http://localhost:2345/product/women-tops?discount=60&rating=3.7
-// router.get("/:id", async (req, res) => {
-//   try {
-//     var mysort = { "price.sp": req.query.sorting || "" };
-//     const rating = req.query.rating || 0;
-//     const discount = req.query.discount || 0;
+// added filter of category discount rating sorting http://localhost:2345/product/earings?discount=60&rating=3.7
+router.get("/:id", async (req, res) => {
+  try {
+    var mysort = { "price.sp": req.query.sorting || "" };
+    const rating = req.query.rating || 0;
+    const discount = req.query.discount || 0;
 
-//     const user = await Todos.find().sort(mysort).lean().exec();
+    const user = await Todos.find().sort(mysort).lean().exec();
 
-//     const filterCtegory = user.filter((e) => e.tag === req.params.id);
+    const filterCtegory = user.filter((e) => e.tag === req.params.id);
 
-//     const filterRating = filterCtegory.filter(
-//       (e) => e.customer_rating >= rating
-//     );
+    const filterRating = filterCtegory.filter(
+      (e) => e.customer_rating >= rating
+    );
 
-//     const filterDiscount = filterRating.filter(
-//       (e) => e.price.discount >= discount
-//     );
+    const filterDiscount = filterRating.filter(
+      (e) => e.price.discount >= discount
+    );
 
-//     return res.send(filterDiscount);
-//   } catch (error) {
-//     ``;
-//     return res.send(error);
-//   }
-// });
+    return res.send(filterDiscount);
+  } catch (error) {
+    ``;
+    return res.send(error);
+  }
+});
 
 
 module.exports = router;
+
+
+// http://localhost:2348/product/earings  category sorting
+// http://localhost:2348/product   all products
+
+// http://localhost:2348/product/earings?rating=4  rating filter
+
+// http://localhost:2348/product/earings?rating=4&discount=11  discount
+// https://diamond-ecommerce.herokuapp.com/

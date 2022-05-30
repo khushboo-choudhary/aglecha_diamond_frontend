@@ -18,11 +18,6 @@ const register = async (req, res) => {
     // if user is not found then we will create the user with the email and the password provided
     user = await User.create(req.body);
 
-    // user = new User()
-    // user.email = req.body.email
-    // user.password = req.body.password
-    // user.save();
-
     // then we will create the token for that user
     const token = newToken(user);
 

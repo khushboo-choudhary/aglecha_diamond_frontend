@@ -7,10 +7,9 @@ const dotenv = require("dotenv");
 const app = express();
 app.use(express.json());
 
-let port = process.env.PORT || 2344;
+let port = process.env.PORT || 2348;
 
 const paymentRoutes = require("./controllers/payment");
-
 
 const productApi = require("./controllers/ProductsController");
 
@@ -19,16 +18,12 @@ const passport = require("./configs/google-oauth");
 
 app.use(cors());
 
-// const userController = require("./controllers/user.controller");
-// const productController = require("./controllers/product.controller");
 const { register, login, newToken } = require("./controllers/auth.controller");
 
 // register
 app.post("/register", register);
 // .login
 app.post("/login", login);
-
-
 
 app.use("/api/payment/", paymentRoutes);
 

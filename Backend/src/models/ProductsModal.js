@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //to add new product to array  aaa
 // new line
-const EcommerceProductsSchema = new mongoose.Schema(
+const DiamondProductsSchema = new mongoose.Schema(
   {
     title: { type: String, require: true }
   },
@@ -12,5 +12,5 @@ const EcommerceProductsSchema = new mongoose.Schema(
   }
 );
 
-const EcommerceProducts = mongoose.model("E-CommerceWebsite", EcommerceProductsSchema);
-module.exports = EcommerceProducts;
+const DiamondProducts = mongoose.model("DiamondWebsite", DiamondProductsSchema);
+module.exports = DiamondProducts;
