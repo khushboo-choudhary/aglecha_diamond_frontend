@@ -3,10 +3,11 @@ const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
+    nickName: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     mobile: { type: String, required: true },
     password: { type: String, required: true },
+    profileImage: {type: String, default:"https://a.rsg.sc/n/shreyas1000/n"},
   },
   {
     versionKey: false,
@@ -20,7 +21,7 @@ userSchema.pre("save", function (next) {
   // secret , salt => sdkfhsdkfh , secret + sdkfhsdkfh => dskfgkcskdfgsdkfsdf
   // salt
   // hashing rounds =>
-  var hash = bcrypt.hashSync(this.password, 8);
+  let hash = bcrypt.hashSync(this.password, 8);
   this.password = hash;
   return next();
 });

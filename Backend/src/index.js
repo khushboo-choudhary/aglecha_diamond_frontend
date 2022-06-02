@@ -1,34 +1,34 @@
 const express = require("express");
 const cors = require("cors");
-
 const connect = require("./configs/db")
-
-const dotenv = require("dotenv");
+require("dotenv").config();
 const app = express();
-app.use(express.json());
-
-let port = process.env.PORT || 2348;
-
 const paymentRoutes = require("./controllers/payment");
-
 const productApi = require("./controllers/ProductsController");
-
 const passport = require("./configs/google-oauth");
-
+const userController = require("./controllers/user.controller");
+const { register, login, newToken } = require("./controllers/auth.controller");
 
 app.use(cors());
+app.use(express.json());
 
-const { register, login, newToken } = require("./controllers/auth.controller");
+
+let port = process.env.PORT || 2345;
+
 
 // register
 app.post("/register", register);
 // .login
 app.post("/login", login);
+app.use("/users", userController);
 
+//payment
 app.use("/api/payment/", paymentRoutes);
 
+//product
 app.use("/product", productApi);
 
+//google oauth
 passport.serializeUser(function (user, done) {
   done(null, user);
 });
@@ -39,29 +39,36 @@ passport.deserializeUser(function (user, done) {
 
 app.get(
   "/auth/google",
-  passport.authenticate("google", { scope: ["email", "profile"] })
+  passport.authenticate("google", { scope: ["profile", "email",] })
 );
 
 app.get(
   "/auth/google/callback",
   passport.authenticate("google", {
+   
     failureRedirect: "/auth/google/failure",
   }),
   (req, res) => {
     const { user } = req;
-    console.log("user", user);
+    console.log("req", req);
     const token = newToken(user);
-    console.log("user", user);
-    return res.send({ user, token });
+    return res.redirect(
+      `https://aglecha-diamonds-app.vercel.app/google-oauth2success?token=${token}&nickName=${user.nickName}&profileImage=${user.profileImage}`
+    );
   }
 );
 
-app.listen(port, async (req, res) => {
+app.get("/auth/google/failure", (req, res)=>{
+  return res.status(400).json({msg: "Login Failed"});
+});
+ 
+
+app.listen(port, () => {
   try {
-    await connect();
+   connect();
+   console.log(`server is running on port ${port}`);
   } catch (err) {
     console.error(err.message);
   }
-  console.log("listening on port 2345");
   
 });
