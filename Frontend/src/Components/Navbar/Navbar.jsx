@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Navbar.css"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
@@ -34,7 +34,7 @@ const Toolstip = styled(({ className, ...props }) => (
 export default function Navbar() {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+  const { id } = useParams()
   const cart = useSelector((store) => store.cart.cart)
   const wishlist = useSelector((store) => store.cart.wishlist)
   console.log(wishlist)
@@ -53,8 +53,8 @@ export default function Navbar() {
       <div  className='cursar' onClick={() => navigate("/category/chains/products")}>Chains</div>
       <div className='cursar' onClick={() => navigate("/category/rings/products")}>Rings</div>
       <div className='cursar' onClick={() => navigate("/contact_us")}>Contact</div>
-      <div onClick={() => navigate("/login")}><input type="text" placeholder='Search' /></div>
-
+      <div onClick={() => navigate("/login")}><input type="text" placeholder='Search' onClick={()=>navigate(`/${id}`)}/></div>
+       
       {
         isAuth === true ? <div className='avtar dropdown' >
           <div className='name'><p>{userLogData[0].user.email[0]}</p></div>
