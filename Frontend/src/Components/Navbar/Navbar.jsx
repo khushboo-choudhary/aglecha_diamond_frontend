@@ -2,7 +2,6 @@ import React from 'react'
 import "./Navbar.css"
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import DiamondIcon from '@mui/icons-material/Diamond';
 import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
@@ -47,7 +46,7 @@ export default function Navbar() {
   return (
     <div>
       <div className='NavBar'>
-        <div onClick={() => navigate("/")}><p className='FontStyleName'><DiamondIcon color="error" fontSize='60px'/>Aglecha Diamond</p></div>
+        <div id="box" onClick={() => navigate("/")}><img src="logodiamonds.jpg" alt="" id="logo" /><p className='FontStyleName'>Aglecha Diamond</p></div>
     
       <div className='cursar' onClick={() => navigate("/category/earings/products")}>Earings</div>
       <div className='cursar' onClick={() => navigate("/category/bracelets/products")}>Bracelets</div>
@@ -80,7 +79,7 @@ export default function Navbar() {
       <div onClick={() => navigate("/cart")}>
         <IconButton aria-label="cart" >
           <StyledBadge badgeContent={cart.length} color="primary">
-          <Toolstip title="Cart" color ="secondary"><IconButton > <ShoppingCartIcon /></IconButton></Toolstip>
+          <Toolstip title="Cart" color ="error" fontSize="40px"><IconButton > <ShoppingCartIcon /></IconButton></Toolstip>
           </StyledBadge>
         </IconButton>
       </div>

@@ -100,3 +100,14 @@ input{
     cursor: pointer;
   }
 
+#logo{
+    width: 75px;
+    height: 65px;
+    margin-top: 20px;
+    border-radius: 50%;
+
+  }
+#box{
+  display: flex;
+ 
+}

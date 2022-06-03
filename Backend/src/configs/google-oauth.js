@@ -2,7 +2,6 @@ require("dotenv").config();
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth2").Strategy;
 const { v4 } = require("uuid");
-
 const User = require("../models/user.model");
 
 passport.use(
@@ -15,7 +14,7 @@ passport.use(
     },
     async function (request, accessToken, refreshToken, profile, done) {
       console.log("user", request,accessToken,refreshToken);
-      console.log("profile" , profile)
+      // console.log("profile" , profile)
       let user = await User.findOne({ email: profile?.email }).lean().exec();
 
       if (!user) {
@@ -25,9 +24,11 @@ passport.use(
           password: v4(),
           nickName: nickName,
           profileImage: profile?.photos[0].value,
+          
         });
+        console.log(nickName);
       }
-     
+     console.log(nickName);
       return done(null, user);
     }
   )
