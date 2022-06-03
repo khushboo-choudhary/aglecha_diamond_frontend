@@ -67,10 +67,10 @@ router.get("/:id", async (req, res) => {
 module.exports = router;
 
 
-// http://localhost:2348/product/earings  category sorting
-// http://localhost:2348/product   all products
+// http://localhost:2345/product/earings  category sorting
+// http://localhost:2345/product   all products
 
-// http://localhost:2348/product/earings?rating=4  rating filter
+// http://localhost:2345/product/earings?rating=4  rating filter
 
-// http://localhost:2348/product/earings?rating=4&discount=11  discount
-// https://diamond-ecommerce.herokuapp.com/
+// http://localhost:2345/product/earings?rating=4&discount=11  discount
+// https://diamond-khushboo.herokuapp.com/

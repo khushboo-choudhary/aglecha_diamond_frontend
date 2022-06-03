@@ -29,14 +29,14 @@ export default function PaymentPage() {
   // razor par start
   const initPayment = (data) => {
     const options = {
-      key: "rzp_test_e4qko8JTZoYyQh",
+      key: "rzp_test_KWv3oHyovWsmb6",
       amount: (totalMRP) * 100,
       currency: "INR",
       description: "Test Transaction",
 
       handler: async (response) => {
         try {
-          const verifyUrl = "https://diamond-ecommerce.herokuapp.com/api/payment/verify";
+          const verifyUrl = "https://diamond-khushboo.herokuapp.com/api/payment/verify";
           const { data } = await axios.post(verifyUrl, response).then((res) => console.log("after Payment")).catch((error) => { console.log("error after paymwnt"); navigate("/successful"); dispatch(emptyCart()) });
           console.log(data);
           console.log("after given")
@@ -54,7 +54,7 @@ export default function PaymentPage() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "https://diamond-ecommerce.herokuapp.com/api/payment/orders";
+      const orderUrl = "https://diamond-khushboo.herokuapp.com/api/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: 400 });
       console.log(data);
       initPayment(data.data);
@@ -109,7 +109,7 @@ export default function PaymentPage() {
 
             <div className='payOptionDetails'>
               <div>
-                <div className='totolAmt paymentHeading'><p>InstaMojo Pay</p></div>
+                <div className='totolAmt paymentHeading'><p>Razor Pay</p></div>
 
                 <div><input type="text" placeholder='Mobile Number' maxlength="10" value={Mobilenumber} onChange={(e) => handleAddNumber(e)} /></div>
 
@@ -156,7 +156,7 @@ export default function PaymentPage() {
 
 
             </div> :
-              <div className='ProductPricesDivInside'><img src="http://globaldealer.in/admin_dev//assets/image/empty-cart.gif" alt="Empty Cart" className="src1" /><p className='noCartDataFound totolAmt'>Your Cart is Empty</p></div>
+              <div className='ProductPricesDivInside'><img src="https://c.tenor.com/bFkvAnRiQUEAAAAj/stickergiant-swipe-up.gif" alt="Empty Cart" className="src1" /><p className='noCartDataFound totolAmt'>Your Cart is Empty</p></div>
           }
 
 

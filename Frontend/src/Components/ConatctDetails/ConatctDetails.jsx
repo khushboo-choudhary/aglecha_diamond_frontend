@@ -222,7 +222,7 @@ export default function ConatctDetails() {
                     </div>
                 </div>
             ) : (
-                <div className='EmptyCart'><img src="http://globaldealer.in/admin_dev//assets/image/empty-cart.gif" alt="Empty Cart" className="src1" /><p>Your Cart is Empty</p></div>
+                <div className='EmptyCart'><img src="https://c.tenor.com/bFkvAnRiQUEAAAAj/stickergiant-swipe-up.gif" alt="Empty Cart" className="src1" /><p>Your Cart is Empty</p></div>
             )}
             <ToastContainer />
         </div>

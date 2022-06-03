@@ -31,7 +31,7 @@ export const login = (data) => (dispatch)=> {
 
     dispatch(loginLoading())
 
-axios.post("https://diamond-ecommerce.herokuapp.com/login", data).then((res) => {dispatch(loginSuccess(res.data)) ;  toast.success="Login Success"}).catch((error) => {alert(error.response.data.message); dispatch(loginFailure())})
+axios.post("https://diamond-khushboo.herokuapp.com/login", data).then((res) => {dispatch(loginSuccess(res.data)) ;  toast.success="Login Success"}).catch((error) => {alert(error.response.data.message); dispatch(loginFailure())})
   
 }
 
@@ -39,7 +39,7 @@ axios.post("https://diamond-ecommerce.herokuapp.com/login", data).then((res) => 
 export const register = (data) => (dispatch)=> {
 
     dispatch(loginLoading())
-    axios.post("https://diamond-ecommerce.herokuapp.com/register", data).then((res) => {dispatch(loginSuccess(res.data)) ;toast.success="Register Successfully"}).catch((error) => {console.log(error.response.data.message) ; dispatch(loginFailure()) })
+    axios.post("https://diamond-khushboo.herokuapp.com/register", data).then((res) => {dispatch(loginSuccess(res.data)) ;toast.success="Register Successfully"}).catch((error) => {console.log(error.response.data.message) ; dispatch(loginFailure()) })
 
 }
 <ToastContainer/>

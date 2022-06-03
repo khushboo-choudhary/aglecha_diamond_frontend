@@ -17,10 +17,10 @@ export default function ProductDescriptionPage() {
     const cart = useSelector((store) => store.cart.cart)
     const wishlist = useSelector((store) => store.cart.wishlist)
     console.log("cart bolti hai", cart);
-    console.log("wishlist sunti hai", wishlist);
+    console.log("wishlist pasand karti hai", wishlist);
 
     useEffect(() => {
-        if (id) axios.get(`https://diamond-ecommerce.herokuapp.com/product/id/${id}`).then((res) => setData(res.data))
+        if (id) axios.get(`https://diamond-khushboo.herokuapp.com/product/id/${id}`).then((res) => setData(res.data))
     }, [id])
 
     const handleAddBag = () => {
