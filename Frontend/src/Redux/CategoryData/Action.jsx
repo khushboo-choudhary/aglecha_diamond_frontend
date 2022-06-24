@@ -21,7 +21,7 @@ export const dataFailure =() => ({
 
 export const getData = (data) => (dispatch)=> {
     dispatch(dataLoading())
-axios.get(`https://diamond-khushboo.herokuapp.com/product/${data.id}`, {
+axios.get(`https://diamond-server-backend.herokuapp.com/product/${data.id}`, {
       params: {
         sorting: data.sortby,   
         sizes_like: data.size,

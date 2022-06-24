@@ -36,7 +36,7 @@ export default function Login() {
   return (
     <div className="loginHeading">
       <div id="logopng">
-        <img className="logo" src="logodiamonds.jpg" alt="logo" />
+        <img className="logo" src="logodiamonds.png" alt="logo" />
         <h1>Login</h1>
       </div>
       <div>
@@ -60,7 +60,7 @@ export default function Login() {
           <Button  size="large"className='ButtonDiv' variant="contained" color="success" onClick={() => { navigate("/register") }} >Register</Button><br /> <br />
 
           <Button  size="large" className='ButtonDiv' variant="contained" color="success" onClick={() =>
-            window.open("https://diamond-ecommerce.herokuapp.com/auth/google", "_self")
+            window.open("https://diamond-server-backend.herokuapp.com/auth/google", "_self")
 
           }> <GoogleIcon/>&nbsp;
           Sign in with Google </Button>

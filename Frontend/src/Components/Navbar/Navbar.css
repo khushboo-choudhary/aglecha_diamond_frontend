@@ -48,7 +48,10 @@ input{
     font-weight: bolder;
     cursor: pointer;
 }
-
+.ProductsDivSearch{
+  border: 1px solid red;
+  height: auto;
+}
 
 .name {
     padding: 16px;

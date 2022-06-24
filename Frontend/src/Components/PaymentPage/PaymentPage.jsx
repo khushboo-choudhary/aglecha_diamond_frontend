@@ -36,7 +36,7 @@ export default function PaymentPage() {
 
       handler: async (response) => {
         try {
-          const verifyUrl = "https://diamond-khushboo.herokuapp.com/api/payment/verify";
+          const verifyUrl = "https://diamond-server-backend.herokuapp.com/api/payment/verify";
           const { data } = await axios.post(verifyUrl, response).then((res) => console.log("after Payment")).catch((error) => { console.log("error after paymwnt"); navigate("/successful"); dispatch(emptyCart()) });
           console.log(data);
           console.log("after given")
@@ -54,7 +54,7 @@ export default function PaymentPage() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "https://diamond-khushboo.herokuapp.com/api/payment/orders";
+      const orderUrl = "https://diamond-server-backend.herokuapp.com/api/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: 400 });
       console.log(data);
       initPayment(data.data);

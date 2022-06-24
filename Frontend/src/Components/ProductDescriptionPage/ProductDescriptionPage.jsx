@@ -20,7 +20,7 @@ export default function ProductDescriptionPage() {
     console.log("wishlist pasand karti hai", wishlist);
 
     useEffect(() => {
-        if (id) axios.get(`https://diamond-khushboo.herokuapp.com/product/id/${id}`).then((res) => setData(res.data))
+        if (id) axios.get(`https://diamond-server-backend.herokuapp.com/product/id/${id}`).then((res) => setData(res.data))
     }, [id])
 
     const handleAddBag = () => {

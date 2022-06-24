@@ -15,7 +15,7 @@ export default function TrendingProducts() {
     const [randomId4, setRandomId4] = useState(0)
 
     useEffect(() => {
-        axios.get("https://diamond-khushboo.herokuapp.com/product").then((res) => setData(res.data));
+        axios.get("https://diamond-server-backend.herokuapp.com/product").then((res) => setData(res.data));
 
         setRandomId1(Math.floor(Math.random() * 10))
         setRandomId2(Math.floor(Math.random() * 10) + 20)

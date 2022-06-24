@@ -10,10 +10,7 @@ import Avatar from '@mui/material/Avatar';
 import Chip from '@mui/material/Chip';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
 import { logout } from '../../Redux/LoginUserData/Action';
-// import axios from 'axios';
-// import { HashLoader } from "react-spinners";
 import { getData } from '../../Redux/CategoryData/Action';
-// import jsonData from "db.json";
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -49,13 +46,6 @@ export default function Navbar() {
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate)
   console.log("nav details ", userLogData)
 
-  // const [searchTerm, setSearchTerm] = useState([]);
-  // console.log(searchTerm);
-
-  //   useEffect(() => {
-  //     axios.get("https://diamond-khushboo.herokuapp.com/product").then((res) => setSearchTerm(res.searchTerm));
-  // })
-
   const data = useSelector((store) => store.categoryReducer.categoryData[0])
   const loading = useSelector((store) => store.categoryReducer.loading)
   console.log("data coming from redux", data)
@@ -72,49 +62,18 @@ export default function Navbar() {
   return (
     <div>
       <div className='NavBar'>
-        <div id="box" onClick={() => navigate("/")}><img src="logodiamonds.jpg" alt="" id="logo" /><p className='FontStyleName'>Aglecha Diamond</p></div>
+        <div id="box" onClick={() => navigate("/")}><img src="logodiamonds.png" alt="logodiamonds" id="logo" /><p className='FontStyleName'>Aglecha Diamond</p></div>
 
         <div className='cursar' onClick={() => navigate("/category/earings/products")}>Earings</div>
         <div className='cursar' onClick={() => navigate("/category/bracelets/products")}>Bracelets</div>
         <div className='cursar' onClick={() => navigate("/category/chains/products")}>Chains</div>
         <div className='cursar' onClick={() => navigate("/category/rings/products")}>Rings</div>
         <div className='cursar' onClick={() => navigate("/contact_us")}>Contact</div>
-        <div><input type="text" placeholder='Search' onChange={(event) => navigate(`/${event.target.id}`)} /></div>
+        <div><input type="text" placeholder='Search' onClick={(event) => navigate(`/category/${event.target.value}/products`)} />
+       
 
-        {/* <div className='ProductsDiv'> */}
-
-        {/* { */}
-          {/* data && loading === false ? */}
-            <>
-              {
-                data.map((e) => (
-                  <>
-                  <div className='IndividualProd' onClick={() => { navigate(`/${id}/${e._id}`) }}>
-                    <div className='IndividualProdImg'>
-                      <img src={e.image} alt="" />
-                    </div>
-                    {/* <button className="IndividualProdRatings">{e.customer_rating}</button> */}
-                    <div className='IndividualProdTitle'>
-
-                      <p>{e.description}</p>
-
-                      <p>
-                        <span>₹ {e.price.sp}</span>
-                        <span>₹ {e.price.mrp}</span>
-                        <button className="IndividualProdRatings">{e.customer_rating}</button>
-                      </p>
-                      <button className='IndividualProdBuyNow'>BUY NOW</button>
-                    </div>
-                  </div>
-                  </>
-                ))
-              }
-            </>
-        
-            {/* } */}
-
-        {/* </div> */}
-
+        </div>
+      
         {
           isAuth === true ? <div className='avtar dropdown' >
             <div className='name'><p>{userLogData[0].user.email[0]}</p></div>
@@ -144,7 +103,7 @@ export default function Navbar() {
           </IconButton>
         </div>
       </div>
-    </div >
+    </div>
   )
 }
 

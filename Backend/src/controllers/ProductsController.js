@@ -74,3 +74,4 @@ module.exports = router;
 
 // http://localhost:2345/product/earings?rating=4&discount=11  discount
 // https://diamond-khushboo.herokuapp.com/
+//https://diamond-server-backend.herokuapp.com/

@@ -69,7 +69,7 @@ export default function Footer() {
             </div>
 
             <div className='Foote3'>
-                    <p>Copyright ©2022 Aglecha Diamonds | All rights reserved | This template is made with  by Khushboo Choudhary</p>
+                    <p>Copyright ©2022 Aglecha Diamonds | All rights reserved | This template is made by Khushboo Choudhary</p>
             </div>
         </div>
     )
