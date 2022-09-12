@@ -31,9 +31,12 @@ export default function Register() {
     dispatch(register(data))
   }
 
+ 
   if (isAuth === true) {
     return navigate("/");
   }
+
+ 
 
   return (
     <div className="loginHeading">
@@ -51,13 +54,14 @@ export default function Register() {
           autoComplete="off"
         >
 
-          <TextField id='color1' label="Name*" variant="outlined" color="success" focused onChange={(e) => setName(e.target.value)} /><br /><br />
+          <TextField id='color1' label="Name*" variant="outlined" type="text"  color="success"   focused onChange={(e) => setName(e.target.value)} /><br /><br />
 
-          <TextField  id='color2'label="Email*" variant="outlined" color="success" focused onChange={(e) => setUserEmail(e.target.value)} /><br /><br />
+          <TextField  id='color2' label="Email*" variant="outlined" type="email"  color="success"  pattern= "/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/" focused onChange={(e) => setUserEmail(e.target.value)} /><br /><br />
 
-          <TextField id='color3' label="Mobile Number*" variant="outlined" color="success" focused onChange={(e) => setMobile(e.target.value)} /><br /><br />
+          <TextField id='color3' label="Mobile Number*" variant="outlined" type="phone" inputProps={{maxLength: 10}}  color="success" focused onChange={(e) => setMobile(e.target.value)} /><br /><br />
 
-          <TextField  id='color4' label="Password*" variant="outlined" color="success" focused onChange={(e) => setUserPassword(e.target.value)} /> <br /><br />
+          <TextField  id='color4' label="Password*" variant="outlined" type="password"  inputProps={{maxLength: 6}}  color="success" focused onChange={(e) => setUserPassword(e.target.value)} /> <br /><br />
+
 
           <Button  size="large" className='ButtonDiv' variant="contained" color="success" onClick={() => handleRegister()} >Register</Button><br /><br />
 
