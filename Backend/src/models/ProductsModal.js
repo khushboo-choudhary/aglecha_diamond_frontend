@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 // new line
 const DiamondProductsSchema = new mongoose.Schema(
   {
-    title: { type: String, require: true }
+    title: { type: String, require: true },
   },
   {
     versionKey: false,
@@ -12,5 +12,8 @@ const DiamondProductsSchema = new mongoose.Schema(
   }
 );
 
-const DiamondProducts = mongoose.model("DiamondWebsite", DiamondProductsSchema);
+const DiamondProducts = mongoose.model(
+  "e-commercewebsites",
+  DiamondProductsSchema
+);
 module.exports = DiamondProducts;
