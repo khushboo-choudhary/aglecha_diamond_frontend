@@ -19,8 +19,7 @@
     padding-top: 22px;
 }
 
-.CategoryHeading>p:nth-child(2){
-    
+.CategoryHeading>p:nth-child(2){ 
     font-family: Jost, sans-serif;
     font-weight: 400;
     font-size: 18px;
@@ -30,12 +29,10 @@
 }
 
 .CategoryBelowCategory{
-    
     width: 88%;
     margin: auto;
     display: flex;
-    margin-top: 3%;
-    
+    margin-top: 3%;   
 }
 
 .FilterDiv{
@@ -52,21 +49,18 @@
 }
 
 
-.ProductsDiv{
-    
+.ProductsDiv{ 
     width: 100%;
     height: 100%;
     display: grid;
     margin-left: 40px;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: auto ;
-    
+    grid-template-rows: auto ; 
 }
 
-.IndividualProd{
-    
+.IndividualProd{   
     width: 95%;
-    height: 380px;
+    height: 420px;
     margin-bottom: 10%;
     gap: 0% !important;
 }
@@ -81,13 +75,6 @@
     height: 100%;
 }
 
-.IndividualProdRatings{
-    background: green;
-    color: white;
-    border: none;
-    margin-top: 3%;
-}
-
 .IndividualProdBuyNow{
     background: blue;
     color: white;
@@ -100,17 +87,14 @@
 }
 
 .IndividualProdTitle{
-    /* border: 2px solid peachpuff; */
     width: 100%;
     height: 25%;
     margin: auto;
     color: navy;
 }
 .IndividualProdTitle>p:nth-child(1){
-    /* border: 2px solid blue; */
     font-family: Jost, sans-serif;
     font-weight: bolder;
-    /* font-size: larger; */
     margin: 0px;
     margin-top: 5%;
 }
@@ -141,8 +125,6 @@
     text-decoration: line-through
 }
 
-
-
 .css-u4tvz2-MuiFormLabel-root {
     color: rgb(33, 26, 26) !important;
     font-family: Arial, Helvetica, sans-serif !important;
@@ -155,14 +137,14 @@
 }
 
 .SpinnerInCategoryDiv{
-    /* border: 2px solid blue; */
     margin-left: 270px;
     padding-top: 80%;
 }
 
 .SpinnerInCategory{
-    /* border: 2px solid red; */
     width: auto;
-    
-    /* margin-left: 100%; */
+}
+.checkDiv .MuiFormControlLabel-label {
+    font-family: "Arial", sans-serif;
+    /* Replace "Arial" with your desired font family */
 }
