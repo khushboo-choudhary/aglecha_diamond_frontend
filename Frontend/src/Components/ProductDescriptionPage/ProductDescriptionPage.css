@@ -25,7 +25,7 @@
   margin-left: 5%;
   width: 50%;
   height: 100%;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 .ProdInfo > div:nth-child(1) > p {
   
@@ -37,7 +37,8 @@
  
 }
 .ProdInfo > div:nth-child(2) > p {
-  
+
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bolder;
   font-size: 120%;
 }
@@ -53,6 +54,7 @@
 
 .PriceDiv {
   display: flex;
+  margin-top: 5%;
 }
 
 .PriceDiv>div:nth-child(1)>p{
@@ -82,9 +84,17 @@
     color: #ff2020;
 }
 
+.PriceDiv>div:nth-child(4)>Button{
+    
+    font-weight: bolder;
+    margin: 0px;
+    margin-left: 25px;
+    width: 100%;   
+}
+
 
 .AddButton{
-    margin-top: 10%;
+    margin-top: 5%;
     display: flex;
 }
 
@@ -188,13 +198,17 @@
   transition: color 0.3s ease 0s, #ff2020 0s ease 0.3s;
 }
 
-.PorductDetailDiv>p{
-margin-top:10%;
-font-size: 20px;
+/* .PorductDetailDiv>p{
+/* margin-top:10%; */
+/* font-size: 20px; */
+/* font-weight: bold;
+color: Red; */
+/* }
+#bold {
+  font-size: 30px;
 font-weight: bold;
-color: red;
-}
-
+color: Red;
+}  */
 .HashLoaderInd{
  
   margin: auto;
@@ -203,6 +217,9 @@ color: red;
 }
 
 .content{
-  font-size: 18px;
-  color: black;
+  font-size: 20px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  white-space: pre-line;
+  line-height: 1;
+
 }

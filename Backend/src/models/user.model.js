@@ -3,11 +3,15 @@ const bcrypt = require("bcryptjs");
 
 const userSchema = new mongoose.Schema(
   {
-    nickName: { type: String, required: true, unique: true },
+    name: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     mobile: { type: String, required: true },
     password: { type: String, required: true },
-    profileImage: {type: String, default:"https://a.rsg.sc/n/shreyas1000/n"},
+    profileImage: {
+      type: String,
+      default:
+        "https://img.freepik.com/premium-psd/3d-rendering-detective-profession-male-avatar_52659-1091.jpg",
+    },
   },
   {
     versionKey: false,
