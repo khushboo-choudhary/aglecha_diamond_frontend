@@ -7,17 +7,17 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Contact from "../ContactUs/ContactUs";
 import CartPage from "../CartPage/CartPage";
+import Wishlist from "../Wishlist/Wishlist";
 import DeliveryOptions from "../DeliveryOptions/DeliveryOptions";
 import ProductDescriptionPage from "../ProductDescriptionPage/ProductDescriptionPage";
 import CategoryPage from "../CategoryPage/CategoryPage";
 import TrendingProducts from "../TrendingProducts/TrendingProducts";
 import ConatctDetails from "../ConatctDetails/ConatctDetails";
 import PaymentPage from "../PaymentPage/PaymentPage";
-import SuccessfulMsg from '../successful/successful';
-import BannerPage from '../Banner/Banner';
+import SuccessfulMsg from "../successful/successful";
+import BannerPage from "../Banner/Banner";
 
 export default function Routerss() {
-
   return (
     <div>
       <Routes>
@@ -27,7 +27,7 @@ export default function Routerss() {
             <>
               <LandingPage />
               <Category />
-              <BannerPage/>
+              <BannerPage />
               <TrendingProducts />
               <DeliveryOptions />
             </>
@@ -42,7 +42,9 @@ export default function Routerss() {
 
         <Route path="/cart" element={<CartPage />} />
 
-        <Route path="/earings/:id" element={<ProductDescriptionPage />}/>
+        <Route path="/wishlist" element={<Wishlist />} />
+
+        <Route path="/earings/:id" element={<ProductDescriptionPage />} />
 
         <Route path="/bracelets/:id" element={<ProductDescriptionPage />} />
 
@@ -57,9 +59,7 @@ export default function Routerss() {
         <Route path="/payment" element={<PaymentPage />} />
 
         <Route path="/successful" element={<SuccessfulMsg />} />
-
       </Routes>
-
     </div>
   );
 }
