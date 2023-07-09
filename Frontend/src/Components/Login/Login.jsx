@@ -63,6 +63,8 @@ export default function Login() {
             label="Password"
             variant="outlined"
             color="success"
+            type="password"
+            inputProps={{ maxLength: 6 }}
             focused
             onChange={(e) => setPassword(e.target.value)}
           />{" "}
