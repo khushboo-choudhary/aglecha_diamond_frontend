@@ -1,6 +1,6 @@
 Aglecha Diamonds
 
-This is My Solo Project.
+This is My Solo Project got from Masai.
 
 
 # Getting Started with Create React App
