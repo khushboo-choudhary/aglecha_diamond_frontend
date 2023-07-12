@@ -15,35 +15,22 @@ export default function PaymentPage() {
     (store) => store.shippingAddress.ShippingAddress
   );
 
-  console.log("payment details", data.length);
-
   var totalMRP = 0;
   var discountMRP = 0;
   var numberOfItems = data.length;
 
   for (var i = 0; i < data.length; i++) {
-    var subTotal = data[i].price.mrp;
-    totalMRP += data[i].price.sp * data[i].qty;
-    var discountedPrice =
-      data[i].price.mrp - (data[i].price.mrp * data[i].price.discount) / 100;
-    discountMRP += Math.round(discountedPrice) * data[i].qty;
-    // discountMRP += (data[i].price.mrp - data[i].price.sp) * data[i].qty;
+    totalMRP += data[i].price.mrp * data[i].qty;
+    discountMRP += (data[i].price.mrp - data[i].price.sp) * data[i].qty;
   }
-  console.log("payment page", discountMRP);
-  // const totalDiscount = data.reduce((acc, item) => {
-  //   return acc + (item.price.mrp - item.price.sp) * item.qty;
-  // }, 0);
-  // console.log("payment", totalDiscount);
-  const dispatch = useDispatch();
 
-  // SubTotal
-  // Youa
+  const dispatch = useDispatch();
 
   // razor par start
   const initPayment = (data) => {
     const options = {
-      key: "rzp_test_KWv3oHyovWsmb6",
-      amount: totalMRP * 100,
+      key: "rzp_test_tX1SB5d4I3FdzL",
+      amount: (totalMRP - discountMRP) * 100,
       currency: "INR",
       description: "Test Transaction",
 
@@ -54,12 +41,10 @@ export default function PaymentPage() {
             .post(verifyUrl, response)
             .then((res) => console.log("after Payment"))
             .catch((error) => {
-              console.log("error after paymwnt");
               navigate("/successful");
               dispatch(emptyCart());
             });
           console.log(data);
-          console.log("after given");
         } catch (error) {
           console.log(error);
         }
@@ -78,8 +63,6 @@ export default function PaymentPage() {
       const { data } = await axios.post(orderUrl, { amount: 400 });
       console.log(data);
       initPayment(data.data);
-
-      console.log("afterrrrrr");
     } catch (error) {
       console.log(error);
     }
@@ -193,8 +176,7 @@ export default function PaymentPage() {
                   <p>Total MRP</p>
                 </div>
                 <div>
-                  {/* <p>₹{totalMRP}</p> */}
-                  <p>₹{subTotal}</p>
+                  <p>₹{totalMRP}</p>
                 </div>
               </div>
 
@@ -227,7 +209,7 @@ export default function PaymentPage() {
                   <p>Total Amount</p>
                 </div>
                 <div>
-                  <p>₹{totalMRP}</p>
+                  <p>₹{totalMRP - discountMRP}</p>
                 </div>
               </div>
             </div>
