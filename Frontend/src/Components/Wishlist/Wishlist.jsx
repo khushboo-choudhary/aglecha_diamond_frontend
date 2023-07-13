@@ -44,6 +44,7 @@ export default function Wishlist() {
   };
 
   const handleRemoveWishlist = (item) => {
+    console.log("bchbchwagcug", item);
     dispatch(removeWishlist(item));
     toast.success("Product Removed From Wishlist");
   };
@@ -89,13 +90,13 @@ export default function Wishlist() {
                   </p>
                   <button
                     className="IndividualProdBuyNow"
-                    onClick={() => handleMoveToCart()}
+                    onClick={() => handleMoveToCart(e)}
                   >
                     MOVE TO CART
                   </button>
                   <button
                     className="IndividualProdBuyNow"
-                    onClick={() => handleRemoveWishlist()}
+                    onClick={() => handleRemoveWishlist(e)}
                   >
                     REMOVE TO WISHLIST
                   </button>
