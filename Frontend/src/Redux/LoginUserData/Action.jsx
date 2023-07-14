@@ -32,7 +32,7 @@ export const login = (data) => (dispatch) => {
     .post("http://localhost:2345/login", data)
     .then((res) => {
       dispatch(loginSuccess(res.data));
-      toast.success = "Login Success";
+      toast.success("Login Successfully");
     })
     .catch((error) => {
       alert(error.response.data.message);
@@ -46,10 +46,10 @@ export const register = (data) => (dispatch) => {
     .post("http://localhost:2345/register", data)
     .then((res) => {
       dispatch(loginSuccess(res.data));
-      toast.success = "Register Successfully";
+      toast.success("Register Successfully");
     })
     .catch((error) => {
-      console.log(error.response.data);
+      alert(error.response.data.message);
       dispatch(loginFailure());
     });
 };

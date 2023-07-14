@@ -91,8 +91,7 @@ export const cartReducer = (store = initState, { type, payload }) => {
 
     case ADD_WISHLIST:
       const addedWishlistItem = store.wishlist.find(
-        (item) => item.id === payload.id
-        // console.log("-=-=-=", item, payload)
+        (item) => item._id === payload._id
       );
       if (!addedWishlistItem) {
         return { ...store, wishlist: [...store.wishlist, payload] };
@@ -101,8 +100,7 @@ export const cartReducer = (store = initState, { type, payload }) => {
 
     case REMOVE_WISHLIST:
       const updatedWishlist = store.wishlist.filter(
-        (item) => console.log("itedhdhdyjddgsdsrt", item)
-        // item.id !== payload.id
+        (item) => item._id !== payload._id
       );
       return { ...store, wishlist: updatedWishlist };
 
