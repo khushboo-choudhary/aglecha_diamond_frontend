@@ -16,6 +16,7 @@ export default function CartPage() {
   var total = 0;
 
   for (var i = 0; i < data.length; i++) {
+    console.log("hdjkhekhdkjh", data[i]);
     console.log("qty", data[i].qty, "price", data[i].price.sp);
     total += data[i].price.sp * data[i].qty;
   }
