@@ -32,10 +32,10 @@ export default function Wishlist() {
   //   dispatch(removeWishlist(data));
   // };
 
-  const handleAddBag = (item) => {
-    dispatch(addCart(item));
-    toast.success("Product Added To Cart Successfully");
-  };
+  // const handleAddBag = (item) => {
+  //   dispatch(addCart(item));
+  //   toast.success("Product Added To Cart Successfully");
+  // };
 
   const handleMoveToCart = (item) => {
     dispatch(addCart(item));
@@ -44,7 +44,6 @@ export default function Wishlist() {
   };
 
   const handleRemoveWishlist = (item) => {
-    console.log("bchbchwagcug", item);
     dispatch(removeWishlist(item));
     toast.success("Product Removed From Wishlist");
   };
