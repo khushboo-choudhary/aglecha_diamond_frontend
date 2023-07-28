@@ -1,145 +1,17 @@
-/* 
-.Heading {
-    color: blue;
-    font-size: 20px;
-    font-weight: 900;
-
-}
-
-.IndividualProd {
-    color: black;
-    font-weight: bolder;
-    align-items: center;
-    border-bottom: 1px solid rgb(125, 115, 115);
-    padding-bottom: 2%;
-    padding-top: 2%;
-}
-
-.IndividualProd>div:nth-child(1) {
-
-    width: 300px;
-    height: 100px;
-}
-
-.IndividualProd>div:nth-child(1)>img {
-
-    width: 100%;
-    height: 100%;
-}
-
-.IndividualProd>div:nth-child(2) {
-
-    width: 100%;
-}
-
-.IndividualProd>div:nth-child(3) {
-
-    width: 400px;
-}
-
-.IndividualProd>div:nth-child(4) {
-
-    width: 400px;
-}
-
-.IndividualProd>div:nth-child(5) {
-
-    width: 400px;
-}
-
-.EmptyCart>p {
-
-    font-size: 30px;
-    font-weight: bolder;
-    margin-top: 10%;
-    margin-bottom: 10%;
-}
-
-.src1 {
-
-    width: 400px;
-    height: 400px;
-    border-radius: none;
-}
-
-.EmptyCart {
-    margin: 3%;
-
-} 
-
-.whishlist_btn{
-    background-color: br/own; 
-   display: flex;
-   justify-content: space-evenly;
-}
- .ProductsDiv{
-margin-top: 3%;
-}  
-   */
-
-   /* .WhishlistProductsDiv {
-    background-color: brown;
-    margin: 3%;
-    display: flex;
-    gap:1%;
-   } */
-
-   /* Whishlist.css */
-
-   /* CSS for the WhishlistProductsDiv */
-   .WhishlistProductsDiv {
-       /* display: grid;
-       grid-template-columns: repeat(250px, 1fr);
-       grid-gap: 20px; */
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        gap: 20px;
-   }
-
-   /* CSS for IndividualProd */
-   .WhislistIndividualProd {
-    flex: 0 0 calc(33.33% - 20px);
-       /* border: 1px solid #ccc; */
-       /* padding: 15px; */
+   .WishlistProductsDiv {
+       margin: 2%;
+       display: grid;
+       grid-template-columns: repeat(4, 1fr);
+       grid-gap: 20px;
        cursor: pointer;
-       /* transition: transform 0.2s ease-in-out; */
+
    }
-
-   .WhislistIndividualProd:hover {
-       transform: translateY(-5px);
-   }
-
-   /* .WishlistIndividualProdImg img {
-       width: 100%;
-       max-height: 200px;
-       object-fit: cover;
-   } */
-
-   /* .WishlistIndividualProdTitle {
-       margin-top: 10px;
-   }
-
-   .WishlistIndividualProdTitle p {
-       margin: 0;
-       font-size: 16px;
-       font-weight: bold;
-   }
-
-   .WishlistIndividualProdTitle span {
-       display: block;
-       font-size: 14px;
-   }
-
-   .WishlistIndividualProdRatings {
-       margin-top: 10px;
-   } */
 
    /* CSS for the buttons */
    .whishlist_btn {
        display: flex;
        align-items: center;
-       justify-content: space-between;
+       justify-content: space-evenly;
        margin-top: 15px;
    }
 
@@ -163,14 +35,35 @@ margin-top: 3%;
        background-color: #0056b3;
    }
 
+   .IndividualProdRemoveNow {
+       padding: 8px 8px;
+       font-size: 14px;
+       font-weight: bold;
+       background-color: #007bff;
+       color: #fff;
+       border: none;
+       border-radius: 4px;
+       cursor: pointer;
+       transition: background-color 0.2s ease-in-out;
+   }
+
+   .IndividualProdRemoveNow:not(:last-child) {
+       margin-right: 10px;
+   }
+
+   .IndividualProdRemoveNow:hover {
+       background-color: #0056b3;
+   }
+
    /* CSS for EmptyCart */
-   .EmptyCart {
-       display: flex;
-       flex-direction: column;
-       align-items: center;
+   .EmptysCart {
+       margin-left: 500px;
+       flex: 1;
+       align-content: center;
        justify-content: center;
        text-align: center;
        padding: 40px 0;
+       /* background-color: #218838; */
    }
 
    .EmptyCart img {
@@ -178,21 +71,25 @@ margin-top: 3%;
        margin-bottom: 20px;
    }
 
-   .EmptyCart p {
-       font-size: 18px;
-       font-weight: bold;
-       margin: 0;
+   .EmptysCart p {
+
+       /* margin: 0; */
+       font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+       font-weight: bolder;
+       font-size: 180%;
+       color: blue;
+
    }
 
    .ContinueShoppingButton {
-       margin-top: 20px;
-       padding: 8px 16px;
-       font-size: 14px;
-       font-weight: bold;
-       background-color: #28a745;
-       color: #fff;
-       border: none;
-       border-radius: 4px;
+    /* width: 40%; */
+        height: 50px;
+        background-color: #28a745;
+        color: aliceblue;
+        border: none;
+        border-radius: 5px;
+        font-size: larger;
+        font-weight: bolder;
        cursor: pointer;
        transition: background-color 0.2s ease-in-out;
    }
