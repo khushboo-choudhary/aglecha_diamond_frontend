@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { addCart, removeOneCart } from "../../Redux/Cart/Action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Button from "@mui/material/Button";
 
 export default function CartPage() {
   const navigate = useNavigate();
@@ -28,9 +29,22 @@ export default function CartPage() {
   }, [total]);
 
   const handleAddBag = (e) => {
-    console.log("data", e);
-    dispatch(addCart(e));
-    toast.success("Product Added To Cart Successfully");
+    const existingProduct = data.find((item) => item._id === e._id);
+    if (existingProduct) {
+      const updatedProduct = {
+        ...existingProduct,
+        qty: existingProduct.qty + 1,
+      };
+      dispatch(removeOneCart(existingProduct));
+      dispatch(addCart(updatedProduct));
+      toast.success("Product quantity increased in the cart.");
+    } else {
+      dispatch(addCart({ ...e, qty: 1 }));
+      toast.info("Product Added To The Cart Successfully.");
+    }
+    // console.log("data", e);
+    // dispatch(addCart(e));
+    // toast.success("Product Added To Cart Successfully");
   };
 
   const handleRemoveQuantity = (e) => {
@@ -144,12 +158,27 @@ export default function CartPage() {
         </div>
       ) : (
         <div className="EmptyCart">
-          <img
-            src="https://c.tenor.com/bFkvAnRiQUEAAAAj/stickergiant-swipe-up.gif"
-            alt="Empty Cart"
-            className="src1"
-          />
-          <p>Your Cart is Empty</p>
+          <div>
+            <img
+              src="https://c.tenor.com/bFkvAnRiQUEAAAAj/stickergiant-swipe-up.gif"
+              alt="Empty Cart"
+              className="src1"
+            />
+          </div>
+          <div>
+            <p>Your Cart is Empty</p>
+          </div>
+          <div>
+            <Button
+              className="ContinueShoppingButton"
+              onClick={() => navigate("/")}
+              color="success"
+              // size="large"
+              variant="contained"
+            >
+              Continue Shopping
+            </Button>
+          </div>
         </div>
       )}
 

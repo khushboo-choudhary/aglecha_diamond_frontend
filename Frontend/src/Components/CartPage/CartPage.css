@@ -1,9 +1,9 @@
 .CartPage {
-  
   width: 88%;
   margin: auto;
   padding-top: 2%;
 }
+
 
 .heading{
   color:blue;
@@ -170,21 +170,25 @@
   margin-right: 1.5%;
 }
 
-.EmptyCart>p{
- 
-  font-size: 30px;
-  font-weight: bolder;
-  margin-top: 10%;
-  margin-bottom: 10%;
+/* CSS for EmptyCart */
+
+.EmptyCart img {
+  margin-bottom: 20px;
 }
 
-.src1{
-  
-  width: 400px;
-  height: 400px;
-  border-radius: none;
+.EmptyCart p {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 180%;
+    color: blue;
 }
-.EmptyCart{
-  margin: 3%;
- 
+
+.ContinueShoppingButton {
+  /* border-radius: 20px; */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.ContinueShoppingButton:hover {
+  background-color: #218838;
 }
