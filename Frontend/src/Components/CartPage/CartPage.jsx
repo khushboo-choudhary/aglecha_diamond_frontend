@@ -12,17 +12,13 @@ export default function CartPage() {
   const navigate = useNavigate();
   const data = useSelector((store) => store.cart.cart);
   const [totalMRP, setTotalMRP] = useState(0);
-  console.log("cart", data);
 
   var total = 0;
 
   for (var i = 0; i < data.length; i++) {
-    console.log("hdjkhekhdkjh", data[i]);
-    console.log("qty", data[i].qty, "price", data[i].price.sp);
     total += data[i].price.sp * data[i].qty;
   }
   const dispatch = useDispatch();
-  console.log("total all", total);
 
   useEffect(() => {
     setTotalMRP(total);
@@ -31,26 +27,17 @@ export default function CartPage() {
   const handleAddBag = (e) => {
     const existingProduct = data.find((item) => item._id === e._id);
     if (existingProduct) {
-      const updatedProduct = {
-        ...existingProduct,
-        qty: existingProduct.qty + 1,
-      };
-      dispatch(removeOneCart(existingProduct));
-      dispatch(addCart(updatedProduct));
-      toast.success("Product quantity increased in the cart.");
+      dispatch(addCart(existingProduct));
+      toast.info("Product quantity increased in the cart.");
     } else {
       dispatch(addCart({ ...e, qty: 1 }));
-      toast.info("Product Added To The Cart Successfully.");
+      toast.success("Product Added To The Cart Successfully.");
     }
-    // console.log("data", e);
-    // dispatch(addCart(e));
-    // toast.success("Product Added To Cart Successfully");
   };
 
   const handleRemoveQuantity = (e) => {
-    console.log("remove", e);
     dispatch(removeOneCart(e));
-    toast.success("Product removed To Cart Successfully");
+    toast.success("Product removed From Cart Successfully");
   };
 
   return (
@@ -79,7 +66,6 @@ export default function CartPage() {
               <p className="heading">Total</p>
             </div>
           </div>
-          {console.log("checking cart page ", data)}
           {data.map((e) => (
             <div className="CartProdHeading IndividualProdCart">
               <div
@@ -173,7 +159,6 @@ export default function CartPage() {
               className="ContinueShoppingButton"
               onClick={() => navigate("/")}
               color="success"
-              // size="large"
               variant="contained"
             >
               Continue Shopping
