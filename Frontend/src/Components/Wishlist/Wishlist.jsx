@@ -2,21 +2,20 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./Whislist.css";
 // import { deleteItemCart } from "../../Redux/Cart/Action";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { addCart, removeWishlist } from "../../Redux/Cart/Action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "@mui/material/Button";
+import { pink } from "@mui/material/colors";
 import StarIcon from "@mui/icons-material/Star";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 // import { HashLoader } from "react-spinners";
 
 export default function Wishlist() {
   const navigate = useNavigate();
-  const { id } = useParams();
-  // const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
   const data = useSelector((store) => store.cart.wishlist);
   const dispatch = useDispatch();
-
   const handleMoveToCart = (item) => {
     dispatch(addCart(item));
     dispatch(removeWishlist(item));
@@ -38,18 +37,24 @@ export default function Wishlist() {
         </p>
       </div>
 
-      <div className="WhishlistProductsDiv">
+      <div className="WishlistProductsDiv">
         {data.length !== 0 ? (
           <>
             {data.map((e) => (
-              <div
-                className="IndividualProd"
-                onClick={() => {
-                  navigate(`/${id}/${e._id}`);
-                }}
-              >
-                <div className="IndividualProdImg">
+              <div className="IndividualProd imgpro" key={e._id}>
+                <div
+                  className="IndividualProdImg"
+                  onClick={() => {
+                    navigate(`/${e.tag}/${e._id}`);
+                  }}
+                >
                   <img src={e.image} alt="" />
+                </div>
+                <div>
+                  <FavoriteIcon
+                    sx={{ fontSize: 30, color: pink[500] }}
+                    className="HeartShape"
+                  />
                 </div>
                 <div className="IndividualProdTitle">
                   <p>{e.description}</p>
@@ -75,7 +80,7 @@ export default function Wishlist() {
                       MOVE TO CART
                     </button>
                     <button
-                      className="IndividualProdBuyNow"
+                      className="IndividualProdRemoveNow"
                       onClick={() => handleRemoveWishlist(e)}
                     >
                       REMOVE TO WISHLIST
@@ -86,19 +91,22 @@ export default function Wishlist() {
             ))}
           </>
         ) : (
-          <div className="EmptyCart">
+          <div className="EmptysCart">
             <img
               src="https://c.tenor.com/bFkvAnRiQUEAAAAj/stickergiant-swipe-up.gif"
               alt="Empty Cart"
               className="src1"
             />
             <p>Your Wishlist is Empty</p>
-            <button
+            <Button
               className="ContinueShoppingButton"
               onClick={() => navigate("/")}
+              color="success"
+              size="small"
+              variant="contained"
             >
               Continue Shopping
-            </button>
+            </Button>
           </div>
         )}
       </div>

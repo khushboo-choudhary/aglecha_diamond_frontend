@@ -6,6 +6,16 @@
        cursor: pointer;
 
    }
+   .imgpro {
+       position: relative;
+   }
+
+   .HeartShape {
+       position: absolute;
+       top: 5%;
+       left:5%;
+       z-index: 1;
+   }
 
    /* CSS for the buttons */
    .whishlist_btn {
@@ -63,17 +73,10 @@
        justify-content: center;
        text-align: center;
        padding: 40px 0;
-       /* background-color: #218838; */
-   }
-
-   .EmptyCart img {
-       max-width: 200px;
-       margin-bottom: 20px;
    }
 
    .EmptysCart p {
 
-       /* margin: 0; */
        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
        font-weight: bolder;
        font-size: 180%;
@@ -82,7 +85,6 @@
    }
 
    .ContinueShoppingButton {
-    /* width: 40%; */
         height: 50px;
         background-color: #28a745;
         color: aliceblue;
@@ -90,8 +92,8 @@
         border-radius: 5px;
         font-size: larger;
         font-weight: bolder;
-       cursor: pointer;
-       transition: background-color 0.2s ease-in-out;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
    }
 
    .ContinueShoppingButton:hover {
@@ -99,8 +101,8 @@
    }
 
    /* Additional styles for ToastContainer (assuming it is a notification container) */
-   .ToastContainer {
+   /* .ToastContainer {
        position: fixed;
        bottom: 20px;
        right: 20px;
-   }
+   } */
