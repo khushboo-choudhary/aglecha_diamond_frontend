@@ -3,12 +3,19 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDescriptionPage.css";
-import { addCart, addWishlist } from "../../Redux/Cart/Action";
+import {
+  addCart,
+  addWishlist,
+  removeOneCart,
+  removeWishlist,
+} from "../../Redux/Cart/Action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Alert from "@mui/material/Alert";
 import { HashLoader } from "react-spinners";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
+// import { register } from "../../Redux/LoginUserData/Action";
 
 export default function ProductDescriptionPage() {
   const navigate = useNavigate();
@@ -18,6 +25,8 @@ export default function ProductDescriptionPage() {
   const dispatch = useDispatch();
   const cart = useSelector((store) => store.cart.cart);
   const wishlist = useSelector((store) => store.cart.wishlist);
+  const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
+  console.log("auth kliya bolti hai", isAuth);
   console.log("cart bolti hai", cart);
   console.log("wishlist pasand karti hai", wishlist);
 
@@ -27,17 +36,29 @@ export default function ProductDescriptionPage() {
         .get(`http://localhost:2345/product/id/${id}`)
         .then((res) => setData(res.data));
   }, [id]);
-  console.log("datahghfdfghg", data);
+
   const handleAddBag = () => {
-    console.log("hioooooooooooooooooooooooooooooooo", data);
-    dispatch(addCart(data));
-    toast.success("Product Added To Cart Successfully");
+    const existingProduct = cart.find((item) => item._id === data._id);
+    if (existingProduct) {
+      dispatch(addCart(existingProduct));
+      toast.info("Product quantity increased in the cart.");
+    } else {
+      dispatch(addCart({ ...data, qty: 1 }));
+      toast.success("Product Added To The Cart Successfully.");
+    }
+    // console.log("auth kliya bolti hai inside", isAuth);
+    // dispatch(addCart(data));
+    // toast("Product Added To Cart Successfully");
   };
 
   const handleAddWishlist = () => {
-    console.log("list");
-    dispatch(addWishlist(data));
-    alert("Product Added To Wishlist Successfully");
+    const existingItem = wishlist.find((x) => x._id === data._id);
+    if (existingItem) {
+      toast.info("Product already added to the wishlist.");
+    } else {
+      dispatch(addWishlist(data));
+      toast.success("Product Added To Wishlist Successfully");
+    }
   };
 
   return (
@@ -106,12 +127,31 @@ export default function ProductDescriptionPage() {
             </div>
 
             <div className="AddButton">
-              <button class="hbtn hb-fill-right-br" onClick={handleAddBag}>
-                ADD TO BAG
+              <button
+                class="hbtn hb-fill-right-br"
+                onClick={() => {
+                  if (!isAuth) {
+                    console.log("dbjbdyug2udyguy2", isAuth);
+                    navigate("/login");
+                    return;
+                  }
+                  handleAddBag();
+                }}
+                diabled={!isAuth}
+              >
+                ADD TO CART
               </button>
               <button
                 class="hbtn hb-fill-right-br-left"
-                onClick={handleAddWishlist}
+                onClick={() => {
+                  if (!isAuth) {
+                    console.log("2udyguy2", isAuth);
+                    navigate("/login");
+                    return;
+                  }
+                  handleAddWishlist();
+                }}
+                diabled={!isAuth}
               >
                 WISHLIST
               </button>
