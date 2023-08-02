@@ -60,8 +60,8 @@ export default function Wishlist() {
                   <p>{e.description}</p>
 
                   <p>
-                    <span>₹ {e.price.sp}</span>
-                    <span>₹ {e.price.mrp}</span>
+                    <span>₹ {e?.price?.sp}</span>
+                    <span>₹ {e?.price?.mrp}</span>
                     <Button
                       className="IndividualProdRatings"
                       color="success"
