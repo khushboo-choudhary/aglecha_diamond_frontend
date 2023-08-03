@@ -18,8 +18,6 @@ export default function Register() {
   const [mobile, setMobile] = useState("");
 
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
-  console.log("isAuth", isAuth);
-  console.log("---------------", register);
 
   const handleRegister = () => {
     const data = {
@@ -28,7 +26,6 @@ export default function Register() {
       mobile: mobile,
       password: userPassword,
     };
-    console.log("dataaa", data);
     dispatch(register(data));
   };
 

@@ -1,21 +1,15 @@
-import { ADD_SHIPPING_ADDRESS } from "./Action"
+import { ADD_SHIPPING_ADDRESS } from "./Action";
 
 const initState = {
-  
-    ShippingAddress: [],
-     
+  ShippingAddress: [],
 };
 
-
 export const shippingReducer = (store = initState, { type, payload }) => {
-    console.log("shippingReducer", store)
-    switch (type) {
-        
+  switch (type) {
+    case ADD_SHIPPING_ADDRESS:
+      return { ...store, ShippingAddress: payload };
 
-        case ADD_SHIPPING_ADDRESS:
-            return { ...store, ShippingAddress:payload };
-
-        default:
-            return store;
-    }
-}
+    default:
+      return store;
+  }
+};

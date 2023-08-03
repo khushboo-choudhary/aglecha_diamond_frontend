@@ -8,7 +8,6 @@ const initialState = {
 };
 
 export const searchReducer = (state = initialState, action) => {
-  console.log("checking the payload", action);
   switch (action.type) {
     case SEARCH_LOADING:
       return { ...state, loading: true };

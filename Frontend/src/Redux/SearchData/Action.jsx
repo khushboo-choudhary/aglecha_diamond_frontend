@@ -20,7 +20,6 @@ export const searchFailure = () => ({
 });
 
 export const searchData = (searchTerm) => (dispatch) => {
-  console.log("---------====jpjoi", searchTerm);
   dispatch(searchLoading());
   axios
     .get(`http://localhost:2345/product/search?q=${searchTerm}`)

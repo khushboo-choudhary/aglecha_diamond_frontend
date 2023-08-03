@@ -19,7 +19,6 @@ const initState = {
 };
 
 export const cartReducer = (store = initState, { type, payload }) => {
-  console.log("storeeee", store);
   switch (type) {
     case DATA_LOADING:
       return { ...store, loading: true };
@@ -31,33 +30,22 @@ export const cartReducer = (store = initState, { type, payload }) => {
       return { ...store, loading: false, error: true, todos: [] };
 
     case ADD_CART:
-      console.log("product", store.cart);
-
       const AfterAdding = store.cart.find((x) => x._id === payload._id);
-      console.log("exist", AfterAdding);
       if (AfterAdding) {
-        console.log("inside addd", payload._id);
         var notFound = store.cart.map((x) =>
           x._id === payload._id
             ? { ...AfterAdding, qty: AfterAdding.qty + 1 }
             : x
         );
-        console.log("addonaddon", notFound);
         return { ...store, cart: notFound };
       } else {
-        console.log("notFoundnotFound");
         return { ...store, cart: [...store.cart, { ...payload, qty: 1 }] };
       }
 
-    // return { ...store, cart: [...store.cart ,  notFound] };
-
     case REMOVE_ONE_CART:
-      console.log("product111", store.cart);
       const AfterRemove = store.cart.find((x) => x._id === payload._id);
-      console.log("exist", AfterRemove);
       if (AfterRemove.qty === 1) {
         var removeone = store.cart.filter((x) => x._id !== payload._id);
-        console.log("one");
         return { ...store, cart: removeone };
       } else {
         // eslint-disable-next-line no-redeclare
@@ -66,7 +54,6 @@ export const cartReducer = (store = initState, { type, payload }) => {
             ? { ...AfterRemove, qty: AfterRemove.qty - 1 }
             : x
         );
-        console.log("many", removeone);
         return { ...store, cart: removeone };
       }
 
@@ -76,18 +63,6 @@ export const cartReducer = (store = initState, { type, payload }) => {
     case DELETE_ITEM_CART:
       const AfterDeleteCart = store.cart.filter((el) => el.id !== payload);
       return { ...store, cart: AfterDeleteCart };
-
-    // case ADD_WISHLIST:
-    //   return { ...store, wishlist: [...store.wishlist, payload] };
-    // case REMOVE_WISHLIST:
-    //   let newWishList = [];
-    //   for (let i in store.wishlist) {
-    //     if (!Object.is(i, payload)) {
-    //       newWishList[newWishList.length] = store.wishlist[i];
-    //     } else {
-    //     }
-    //   }
-    //   return { ...store, wishist: newWishList };
 
     case ADD_WISHLIST:
       const addedWishlistItem = store.wishlist.find(
