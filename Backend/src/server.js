@@ -47,9 +47,8 @@ app.get(
   }),
   (req, res) => {
     const { user } = req;
-    console.log("req", req);
     const token = newToken(user);
-    
+
     return res.redirect(
       `https://aglecha-diamonds-app.vercel.app/google-oauth2success?token=${token}&nickName=${user.nickName}&profileImage=${user.profileImage}`
     );

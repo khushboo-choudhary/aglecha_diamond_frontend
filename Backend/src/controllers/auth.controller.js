@@ -11,13 +11,11 @@ const register = async (req, res) => {
   try {
     // we will try to find the user with the email provided
     const user = await User.findOne({ email: req.body.email }).lean().exec();
-    console.log("======", user);
     // if the user is found then it is an error
     if (user) return res.status(400).send({ message: "User already exists" });
 
     // if user is not found then we will create the user with the email and the password provided
     const newUser = await User.create(req.body);
-    console.log("---------", newUser);
     // then we will create the token for that user
     const token = newToken(newUser);
 

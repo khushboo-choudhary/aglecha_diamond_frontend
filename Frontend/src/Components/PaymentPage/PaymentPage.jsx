@@ -79,8 +79,6 @@ export default function PaymentPage() {
 
   return (
     <div className="PaymentPageMain">
-      {/* <h1>Payment</h1> */}
-
       <div className="PaymentPageFlex">
         <div className="PaymentDetailsDiv">
           <div className="bankOfferDiv">

@@ -3,19 +3,12 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDescriptionPage.css";
-import {
-  addCart,
-  addWishlist,
-  removeOneCart,
-  removeWishlist,
-} from "../../Redux/Cart/Action";
+import { addCart, addWishlist } from "../../Redux/Cart/Action";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Alert from "@mui/material/Alert";
 import { HashLoader } from "react-spinners";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
-// import { register } from "../../Redux/LoginUserData/Action";
 
 export default function ProductDescriptionPage() {
   const navigate = useNavigate();
@@ -26,9 +19,6 @@ export default function ProductDescriptionPage() {
   const cart = useSelector((store) => store.cart.cart);
   const wishlist = useSelector((store) => store.cart.wishlist);
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
-  console.log("auth kliya bolti hai", isAuth);
-  console.log("cart bolti hai", cart);
-  console.log("wishlist pasand karti hai", wishlist);
 
   useEffect(() => {
     if (id)
@@ -46,9 +36,6 @@ export default function ProductDescriptionPage() {
       dispatch(addCart({ ...data, qty: 1 }));
       toast.success("Product Added To The Cart Successfully.");
     }
-    // console.log("auth kliya bolti hai inside", isAuth);
-    // dispatch(addCart(data));
-    // toast("Product Added To Cart Successfully");
   };
 
   const handleAddWishlist = () => {
@@ -131,7 +118,6 @@ export default function ProductDescriptionPage() {
                 class="hbtn hb-fill-right-br"
                 onClick={() => {
                   if (!isAuth) {
-                    console.log("dbjbdyug2udyguy2", isAuth);
                     navigate("/login");
                     return;
                   }
@@ -145,7 +131,6 @@ export default function ProductDescriptionPage() {
                 class="hbtn hb-fill-right-br-left"
                 onClick={() => {
                   if (!isAuth) {
-                    console.log("2udyguy2", isAuth);
                     navigate("/login");
                     return;
                   }
