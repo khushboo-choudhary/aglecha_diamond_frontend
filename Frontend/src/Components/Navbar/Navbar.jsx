@@ -6,6 +6,7 @@ import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
@@ -14,6 +15,7 @@ import { getData } from "../../Redux/CategoryData/Action";
 import { searchData } from "../../Redux/SearchData/Action";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { useState } from "react";
+import { debounce } from "lodash";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -51,32 +53,44 @@ export default function Navbar() {
   const searchResults = useSelector((state) => state.searchReducer.searchData);
   const loadings = useSelector((state) => state.searchReducer.loading);
 
-  console.log("-0-0-0-0-0", searchResults);
-  console.log("==00=9=9-99-", loadings);
-
   const [searchTerm, setSearchTerm] = useState("");
-  const handleSearch = () => {
-    if (searchTerm.trim() === "") {
+
+  const debouncedSearch = debounce((query) => {
+    if (query.trim() === "") {
       alert("Please enter a search term");
       return;
     }
-    dispatch(searchData(searchTerm));
+    dispatch(searchData(query));
+  }, 300);
+
+  const handleSearch = () => {
+    const query = searchTerm;
+    setSearchTerm(query);
+    debouncedSearch(query);
   };
 
-  // const handleKeyPress = (e) => {
-  //   if (e.key === "Enter") {
-  //     e.preventDefault();
-  //     handleSearch();
-  //   }
-  // };
+  const handleProductClick = (result) => {
+    navigate(`/${result.tag}/${result._id}`);
+  };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      handleSearch();
+    }
+  };
+
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   useEffect(() => {
     const dataSend = {
       id,
     };
 
     dispatch(getData(dataSend));
-    // dispatch(searchData(searchTerm));
-  }, [id, dispatch]);
+    dispatch(searchData(searchTerm));
+  }, [id, dispatch, searchTerm]);
 
   return (
     <div>
@@ -113,45 +127,50 @@ export default function Navbar() {
         <div className="cursar" onClick={() => navigate("/contact_us")}>
           Contact
         </div>
-        <div>
+        <div className="searchBar">
+          <button onClick={handleSearch} className="searchButton">
+            <SearchRoundedIcon />
+          </button>
           <input
             type="text"
             value={searchTerm}
             placeholder="Search"
-            onClick={(event) =>
-              navigate(`/category/${event.target.value}/products`)
-            }
-          />
-          <button onClick={handleSearch}>
-            <SearchRoundedIcon />
-          </button>
-        </div>
-        {/* <div className="searchBar">
-          <button onClick={handleSearch} className="searchButton">
-            <SearchRoundedIcon />
-          </button>
-
-          <input
-            type="text"
-            placeholder="Search Category"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyPress={handleKeyPress}
             className="searchInput"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={() => handleSearch()}
+            onKeyPress={handleKeyPress}
           />
           {loadings ? (
             <p>Loading...</p>
           ) : searchResults.length > 0 && searchTerm !== "" ? (
-            searchResults.map((result) => (
-              <div key={result.id}>
-                <p>{result.description}</p>
-                Render other details */}
-        {/* </div>
-            ))
+            <div className="searchResultsDropdown">
+              {searchResults.map((result) => (
+                <div
+                  className="productCard"
+                  onClick={() => handleProductClick(result)}
+                  key={result._id}
+                >
+                  <div className="productImageWrapper">
+                    <img
+                      src={result.image}
+                      alt={result.description}
+                      className="productImage"
+                    />
+                  </div>
+                  <div className="productDetails">
+                    <h3 className="productTag">
+                      {capitalizeFirstLetter(result.tag)}
+                    </h3>
+                    <p className="productName">{result.description}</p>
+                    <p className="productPrice">Price: ₹{result.price.sp}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           ) : (
-            searchTerm !== "" && <p>No results found.</p>
+            searchTerm !== "" && <p className="noResults">No results found.</p>
           )}
-        </div> */}
+        </div>
 
         {isAuth === true ? (
           <div className="dropdown">
@@ -183,6 +202,21 @@ export default function Navbar() {
           </div>
         )}
 
+        {/* whislist */}
+        <div onClick={() => navigate("/wishlist")}>
+          <IconButton aria-label="wishlist">
+            <StyledBadge badgeContent={wishlist.length} color="primary">
+              <Toolstip title="Whislist" color="error" fontSize="40px">
+                <IconButton>
+                  {" "}
+                  <FavoriteBorderIcon />
+                </IconButton>
+              </Toolstip>
+            </StyledBadge>
+          </IconButton>
+        </div>
+
+        {/* cart item */}
         <div onClick={() => navigate("/cart")}>
           <IconButton aria-label="cart">
             <StyledBadge badgeContent={cart.length} color="primary">

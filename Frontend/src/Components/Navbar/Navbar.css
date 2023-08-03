@@ -150,3 +150,116 @@ input{
   width: 18px;
   height: 18px;
 }
+
+/* Styles for the Search Results Dropdown */
+.searchResultsDropdown {
+  position: absolute;
+  top: 50px;
+  /* border: 1px solid #ccc;
+  border-top: none; */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 999;
+  width: 250px;
+}
+
+/* Styles for each product card inside the dropdown */
+.productCard {
+  display: flex;
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.productCard:last-child {
+  border-bottom: none;
+}
+
+.productImageWrapper {
+  flex: 0 0 60px;
+  margin-right: 8px;
+}
+
+/* .searchResultsDropdown div {
+  padding: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+} */
+
+/* .searchResultsDropdown div:hover {
+  background-color: #f2f2f2;
+} */
+
+.noResults {
+  margin: 8px;
+  color: #777;
+} 
+
+/* .making {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  /* border: 1px solid #ccc; 
+  border-radius: 4px;
+  /* margin-bottom: 10px; 
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+
+/* .productInfo {
+  display: flex;
+  align-items: center;
+} */
+
+.productImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  /* margin-right: 10px; */
+}
+
+.productDetails {
+  flex: 1;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+/* .productName {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.productPrice {
+  font-size: 16px;
+  color: #007bff;
+} */
+
+productName {
+  font-size: 16px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.productPrice {
+  font-size: 14px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  color: blue;
+  margin: 0;
+}
+
+.productTag {
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.productCard:hover {
+  background-color: #f2f2f2;
+}
