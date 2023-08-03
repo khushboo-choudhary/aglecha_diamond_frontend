@@ -18,14 +18,12 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
-  console.log("home ", isAuth);
 
   const handleAdd = () => {
     const data = {
       email: useeremail,
       password: password,
     };
-    console.log("hello motu", data);
     dispatch(login(data));
   };
 
