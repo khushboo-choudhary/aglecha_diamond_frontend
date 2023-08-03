@@ -1,4 +1,3 @@
-// import axios from 'axios'FormControlLabel
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./CategoryPage.css";
@@ -10,20 +9,41 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Button from "@mui/material/Button";
 import StarIcon from "@mui/icons-material/Star";
-
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { getData } from "../../Redux/CategoryData/Action";
-
+import { pink } from "@mui/material/colors";
 import { HashLoader } from "react-spinners";
+import { toast } from "react-toastify";
+import { addWishlist } from "../../Redux/Cart/Action";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function CategoryPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { id } = useParams();
-
+  const wishlist = useSelector((store) => store.cart.wishlist);
   const data = useSelector((store) => store.categoryReducer.categoryData[0]);
   const loading = useSelector((store) => store.categoryReducer.loading);
-  console.log("data coming from redux", data);
-  console.log("loading with spinner", loading);
+  const [isWishlist, setIsWishlist] = useState({});
+  const handleAddWishlist = (e) => {
+    const existingItem = wishlist.find((x) => x._id === e);
+    if (existingItem) {
+      toast.info("Product already added to the wishlist.");
+    } else {
+      dispatch(addWishlist(data.find((item) => item._id === e)));
+      toast.success("Product Added To Wishlist Successfully");
+    }
+  };
+
+  useEffect(() => {
+    // Update the wishlist status object based on the wishlist items
+    const wishlistStatusObject = wishlist.reduce((acc, item) => {
+      acc[item._id] = true;
+      return acc;
+    }, {});
+
+    setIsWishlist(wishlistStatusObject);
+  }, [wishlist]);
 
   const [sortby, SetSortby] = useState(1);
   const [discount, SetDiscount] = useState("");
@@ -38,8 +58,6 @@ export default function CategoryPage() {
     };
     dispatch(getData(dataSend));
   }, [id, sortby, discount, rating, dispatch]);
-
-  console.log("data details", data);
 
   return (
     <div className="CategoryPageMain">
@@ -258,14 +276,26 @@ export default function CategoryPage() {
           {data && loading === false ? (
             <>
               {data.map((e) => (
-                <div
-                  className="IndividualProd"
-                  onClick={() => {
-                    navigate(`/${id}/${e._id}`);
-                  }}
-                >
-                  <div className="IndividualProdImg">
+                <div className="IndividualProd imgpro">
+                  <div
+                    className="IndividualProdImg"
+                    onClick={() => {
+                      navigate(`/${id}/${e._id}`);
+                    }}
+                  >
                     <img src={e.image} alt="" />
+                  </div>
+                  <div
+                    onClick={() => handleAddWishlist(e._id)}
+                    className="HeartShape"
+                  >
+                    {isWishlist[e._id] ? (
+                      <FavoriteIcon sx={{ fontSize: 30, color: pink[500] }} />
+                    ) : (
+                      <FavoriteBorderIcon
+                        sx={{ fontSize: 30, color: pink[500] }}
+                      />
+                    )}
                   </div>
                   <div className="IndividualProdTitle">
                     <p>{e.description}</p>

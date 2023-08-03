@@ -148,3 +148,18 @@
     font-family: "Arial", sans-serif;
     /* Replace "Arial" with your desired font family */
 }
+
+  .imgpro {
+      position: relative;
+  }
+
+.HeartShape {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1;
+}
+.HeartShape.active {
+    color: red;
+    /* Color of the icon when it's active (filled) */
+}
