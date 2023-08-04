@@ -206,7 +206,7 @@ export default function Navbar() {
         <div onClick={() => navigate("/wishlist")}>
           <IconButton aria-label="wishlist">
             <StyledBadge badgeContent={wishlist.length} color="primary">
-              <Toolstip title="Whislist" color="error" fontSize="40px">
+              <Toolstip title="Whislist" color="primary" fontSize="40px">
                 <IconButton>
                   {" "}
                   <FavoriteBorderIcon />
@@ -220,7 +220,7 @@ export default function Navbar() {
         <div onClick={() => navigate("/cart")}>
           <IconButton aria-label="cart">
             <StyledBadge badgeContent={cart.length} color="primary">
-              <Toolstip title="Cart" color="error" fontSize="40px">
+              <Toolstip title="Cart" color="primary" fontSize="40px">
                 <IconButton>
                   {" "}
                   <ShoppingCartIcon />
