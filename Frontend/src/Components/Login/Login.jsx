@@ -47,11 +47,10 @@ export default function Login() {
           autoComplete="off"
         >
           <TextField
-            id="color1"
             label="Email"
             variant="outlined"
-            color="success"
             focused
+            inputProps={{ color: "red", fontFamily: "Arial, sans-serif" }}
             onChange={(e) => setUseremail(e.target.value)}
           />
           <br />
