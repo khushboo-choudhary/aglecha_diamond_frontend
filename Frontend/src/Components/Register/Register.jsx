@@ -54,6 +54,7 @@ export default function Register() {
             variant="outlined"
             type="text"
             color="success"
+            inputProps={{ color: "red", fontFamily: "Arial, sans-serif" }}
             focused
             onChange={(e) => setName(e.target.value)}
           />
