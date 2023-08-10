@@ -12,13 +12,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Redux/LoginUserData/Action";
 
 const styles = {
-  // Add your custom styles here
-  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    borderColor: "red", // Change the outline color to red (you can use any color you want)
+  label: {
+    color: "blue", // Change the label color
   },
-  // fontFamily: "Arial, sans-serif",
+  input: {
+    border: "2px solid green", // Change the border color
+    borderRadius: "8px", // Add border radius if desired
+  },
 };
-
 export default function Login() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -58,9 +59,11 @@ export default function Login() {
             label="Email"
             variant="outlined"
             focused
-            // inputProps={{ color: "red", fontFamily: "Arial, sans-serif" }}
-            inputProps={{
-              style: styles, // Apply the custom styles here
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              style: styles.input, // Apply the custom input styles
             }}
             onChange={(e) => setUseremail(e.target.value)}
           />
