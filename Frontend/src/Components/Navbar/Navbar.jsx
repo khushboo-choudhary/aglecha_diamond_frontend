@@ -206,12 +206,16 @@ export default function Navbar() {
         <div onClick={() => navigate("/wishlist")}>
           <IconButton aria-label="wishlist">
             <StyledBadge badgeContent={wishlist.length} color="primary">
-              <Toolstip title="Whislist" color="primary" fontSize="40px">
+              <Tooltip
+                title={<span style={{ fontSize: "15px" }}>Wishlist</span>}
+                arrow
+                style={{ color: "navy" }}
+              >
                 <IconButton>
                   {" "}
                   <FavoriteBorderIcon />
                 </IconButton>
-              </Toolstip>
+              </Tooltip>
             </StyledBadge>
           </IconButton>
         </div>
@@ -220,12 +224,16 @@ export default function Navbar() {
         <div onClick={() => navigate("/cart")}>
           <IconButton aria-label="cart">
             <StyledBadge badgeContent={cart.length} color="primary">
-              <Toolstip title="Cart" color="primary" fontSize="40px">
+              <Tooltip
+                arrow
+                title={<span style={{ fontSize: "15px" }}>Cart</span>}
+                style={{ color: "navy" }}
+              >
                 <IconButton>
                   {" "}
                   <ShoppingCartIcon />
                 </IconButton>
-              </Toolstip>
+              </Tooltip>
             </StyledBadge>
           </IconButton>
         </div>
