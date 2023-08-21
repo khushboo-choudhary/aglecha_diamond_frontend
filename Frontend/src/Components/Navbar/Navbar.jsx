@@ -9,7 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
-import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
+import Tooltip from "@mui/material/Tooltip";
 import { logout } from "../../Redux/LoginUserData/Action";
 import { getData } from "../../Redux/CategoryData/Action";
 import { searchData } from "../../Redux/SearchData/Action";
@@ -26,17 +26,6 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const Toolstip = styled(({ className, ...props }) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.common.white,
-    color: "green",
-    boxShadow: theme.shadows[1],
-    fontSize: 14,
-  },
-}));
-
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -45,6 +34,7 @@ export default function Navbar() {
   const wishlist = useSelector((store) => store.cart.wishlist);
 
   const userLogData = useSelector((store) => store.loginUserData.userData);
+  console.log("hyfyfbnavbar", userLogData);
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
 
   const data = useSelector((store) => store.categoryReducer.categoryData[0]);
@@ -71,12 +61,6 @@ export default function Navbar() {
 
   const handleProductClick = (result) => {
     navigate(`/${result.tag}/${result._id}`);
-  };
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      e.preventDefault();
-      handleSearch();
-    }
   };
 
   const capitalizeFirstLetter = (string) => {
@@ -134,11 +118,9 @@ export default function Navbar() {
           <input
             type="text"
             value={searchTerm}
-            placeholder="Search"
+            placeholder="Search....."
             className="searchInput"
             onChange={(e) => setSearchTerm(e.target.value)}
-            onClick={() => handleSearch()}
-            onKeyPress={handleKeyPress}
           />
           {loadings ? (
             <p>Loading...</p>
@@ -207,9 +189,18 @@ export default function Navbar() {
           <IconButton aria-label="wishlist">
             <StyledBadge badgeContent={wishlist.length} color="primary">
               <Tooltip
-                title={<span style={{ fontSize: "15px" }}>Wishlist</span>}
+                title={
+                  <span
+                    style={{
+                      fontSize: "15px",
+                      fontWeight: "bolder",
+                    }}
+                  >
+                    Wishlist
+                  </span>
+                }
                 arrow
-                style={{ color: "navy" }}
+                style={{ color: "blue" }}
               >
                 <IconButton>
                   {" "}
@@ -226,8 +217,12 @@ export default function Navbar() {
             <StyledBadge badgeContent={cart.length} color="primary">
               <Tooltip
                 arrow
-                title={<span style={{ fontSize: "15px" }}>Cart</span>}
-                style={{ color: "navy" }}
+                title={
+                  <span style={{ fontSize: "15px", fontWeight: "bolder" }}>
+                    Cart
+                  </span>
+                }
+                style={{ color: "blue" }}
               >
                 <IconButton>
                   {" "}

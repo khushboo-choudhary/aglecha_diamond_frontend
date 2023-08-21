@@ -155,14 +155,12 @@ input{
 .searchResultsDropdown {
   position: absolute;
   top: 50px;
-  /* border: 1px solid #ccc;
-  border-top: none; */
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   max-height: 200px;
   overflow-y: auto;
   z-index: 999;
   width: 250px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 /* Styles for each product card inside the dropdown */
@@ -171,7 +169,7 @@ input{
   padding: 8px;
   cursor: pointer;
   transition: background-color 0.2s;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid grey;
 }
 
 .productCard:last-child {
@@ -183,36 +181,10 @@ input{
   margin-right: 8px;
 }
 
-/* .searchResultsDropdown div {
-  padding: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-} */
-
-/* .searchResultsDropdown div:hover {
-  background-color: #f2f2f2;
-} */
-
 .noResults {
   margin: 8px;
   color: #777;
 } 
-
-/* .making {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  /* border: 1px solid #ccc; 
-  border-radius: 4px;
-  /* margin-bottom: 10px; 
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-} */
-
-/* .productInfo {
-  display: flex;
-  align-items: center;
-} */
 
 .productImage {
   width: 60px;
@@ -239,7 +211,7 @@ input{
   color: #007bff;
 } */
 
-productName {
+.productName {
   font-size: 16px;
   font-weight: bolder;
   margin: 0;
