@@ -29,8 +29,10 @@ export const login = (data) => (dispatch) => {
   dispatch(loginLoading());
 
   axios
-    .post("http://localhost:2345/login", data)
+    .post("https://glamorous-frog-cummerbund.cyclic.cloud/login", data)
     .then((res) => {
+      console.log("logim", res);
+      console.log("---------------------");
       dispatch(loginSuccess(res.data));
       toast.success("Login Successfully");
     })
@@ -43,8 +45,10 @@ export const login = (data) => (dispatch) => {
 export const register = (data) => (dispatch) => {
   dispatch(loginLoading());
   axios
-    .post("http://localhost:2345/register", data)
+    .post("https://glamorous-frog-cummerbund.cyclic.cloud/register", data)
     .then((res) => {
+      console.log("regiter", res);
+      console.log("===============");
       dispatch(loginSuccess(res.data));
       toast.success("Register Successfully");
     })

@@ -12,11 +12,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../Redux/LoginUserData/Action";
 
 const styles = {
+  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    border: "1px solid green", // Change the outline color to red (you can use any color you want)
+  },
   label: {
-    color: "blue", // Change the label color
+    fontWeight: "bold", // Apply bold font weight
+    fontSize: "16px",
+    // fontweight: "bolder",
+    fontFamily: "Arial, sans-serif", // Change the label color
   },
   input: {
-    border: "2px solid green", // Change the border color
+    // border: "1px solid green", // Change the border color
     borderRadius: "8px", // Add border radius if desired
   },
 };
@@ -73,7 +79,13 @@ export default function Login() {
             id="color2"
             label="Password"
             variant="outlined"
-            color="success"
+            // color="success".
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              style: styles.input, // Apply the custom input styles
+            }}
             type="password"
             inputProps={{ maxLength: 6 }}
             focused
@@ -109,7 +121,10 @@ export default function Login() {
             variant="contained"
             color="success"
             onClick={() =>
-              window.open("http://localhost:2345/auth/google", "_self")
+              window.open(
+                "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
+                "_self"
+              )
             }
           >
             {" "}

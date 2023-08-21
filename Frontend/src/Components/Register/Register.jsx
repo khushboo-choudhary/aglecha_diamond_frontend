@@ -9,6 +9,22 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { register } from "../../Redux/LoginUserData/Action";
 
+const styles = {
+  "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+    border: "1px solid green", // Change the outline color to red (you can use any color you want)
+  },
+  label: {
+    fontWeight: "bold", // Apply bold font weight
+    fontSize: "16px",
+    // fontweight: "bolder",
+    fontFamily: "Arial, sans-serif", // Change the label color
+  },
+  input: {
+    // border: "1px solid green", // Change the border color
+    borderRadius: "8px", // Add border radius if desired
+  },
+};
+
 export default function Register() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -53,8 +69,13 @@ export default function Register() {
             label="Name*"
             variant="outlined"
             type="text"
-            color="success"
-            inputProps={{ color: "red", fontFamily: "Arial, sans-serif" }}
+            // color="success"
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              style: styles.input, // Apply the custom input styles
+            }}
             focused
             onChange={(e) => setName(e.target.value)}
           />
@@ -65,7 +86,13 @@ export default function Register() {
             label="Email*"
             variant="outlined"
             type="email"
-            color="success"
+            // color="success"
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              style: styles.input, // Apply the custom input styles
+            }}
             pattern="/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/"
             focused
             onChange={(e) => setUserEmail(e.target.value)}
@@ -77,8 +104,13 @@ export default function Register() {
             label="Mobile Number*"
             variant="outlined"
             type="phone"
-            inputProps={{ maxLength: 10 }}
-            color="success"
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              maxLength: 10,
+              style: styles.input, // Apply the custom input styles
+            }}
             focused
             onChange={(e) => setMobile(e.target.value)}
           />
@@ -89,8 +121,14 @@ export default function Register() {
             label="Password*"
             variant="outlined"
             type="password"
-            inputProps={{ maxLength: 6 }}
-            color="success"
+            InputLabelProps={{
+              style: styles.label, // Apply the custom label styles
+            }}
+            InputProps={{
+              maxLength: 6,
+              style: styles.input, // Apply the custom input styles
+            }}
+            // color="success"
             focused
             onChange={(e) => setUserPassword(e.target.value)}
           />{" "}
@@ -127,7 +165,7 @@ export default function Register() {
             color="success"
             onClick={() =>
               window.open(
-                "https://diamond-server-backend.herokuapp.com/auth/google",
+                "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
                 "_self"
               )
             }
