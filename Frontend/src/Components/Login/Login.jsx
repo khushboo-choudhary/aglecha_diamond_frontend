@@ -122,7 +122,8 @@ export default function Login() {
             color="success"
             onClick={() =>
               window.open(
-                "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
+                "http://localhost:2345/auth/google",
+                // "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
                 "_self"
               )
             }
