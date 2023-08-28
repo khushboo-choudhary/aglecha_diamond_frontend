@@ -13,9 +13,13 @@ import Tooltip from "@mui/material/Tooltip";
 import { logout } from "../../Redux/LoginUserData/Action";
 import { getData } from "../../Redux/CategoryData/Action";
 import { searchData } from "../../Redux/SearchData/Action";
+import { setUser } from "../../Redux/GoogleUserData/Action";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import { useState } from "react";
 import { debounce } from "lodash";
+import { useLocation } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -29,14 +33,50 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  // const [authenticate, setAuthenticate] = useState(false);
+  // console.log("frdndkjhwfiu", searchParams);
+  const userName = searchParams.get("name");
+  const profileImage = searchParams.get("profile");
   const { id } = useParams();
   const cart = useSelector((store) => store.cart.cart);
   const wishlist = useSelector((store) => store.cart.wishlist);
 
   const userLogData = useSelector((store) => store.loginUserData.userData);
+
+  // const userName = useSelector((store) => store.loginUserData.userName);
+
+  // const profileImage = useSelector((store) => store.loginUserData.profileImage);
   console.log("hyfyfbnavbar", userLogData);
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
+  const checkingGoogle = useSelector((store) => store.userData);
+  console.log("-==-wqod-=192", checkingGoogle);
+  const googleUser = useSelector((store) => store.userData.name);
+  const googleImage = useSelector((store) => store.userData.profileImage);
+  const isAuthenticate = useSelector((store) => store.userData.isAuthenticate);
+  console.log("ndksdihiuh", isAuthenticate);
+  // const searchParams = new URLSearchParams(location.search);
+  // const token = searchParams.get("token");
+  // const userName = searchParams.get("name");
+  // const profileImage = searchParams.get("profile");
 
+  useEffect(() => {
+    if (userName && profileImage) {
+      toast.info("Google authentication successful!");
+      // toast("Google authentication successful!");
+      dispatch(setUser(userName, profileImage));
+    }
+    console.log(
+      "--------------------",
+      userName,
+      "=============",
+      profileImage
+    );
+    alert("Google authentication successful!");
+  }, [dispatch, userName, profileImage]);
+
+  // console.log("=[=", authenticate);
   const data = useSelector((store) => store.categoryReducer.categoryData[0]);
   const loading = useSelector((store) => store.categoryReducer.loading);
 
@@ -153,17 +193,22 @@ export default function Navbar() {
             searchTerm !== "" && <p className="noResults">No results found.</p>
           )}
         </div>
-
-        {isAuth === true ? (
+        {/* {console.log("checking the profileImage ", profileImage)} */}
+        {isAuth || isAuthenticate === true ? (
           <div className="dropdown">
             <Chip
-              avatar={<Avatar alt="Avatar" src={userLogData[0].profileImage} />}
-              label={userLogData[0].name}
+              avatar={
+                <Avatar
+                  alt="Avatar"
+                  src={userLogData[0]?.profileImage || googleImage}
+                />
+              }
+              label={userLogData[0]?.name || googleUser}
               variant="outlined"
             />
 
             <div className="dropdownInside">
-              <a href="/">Hello, {userLogData[0].name}</a>
+              <a href="/">Hello, {userLogData[0]?.name || googleUser}</a>
               <a href="/" onClick={() => dispatch(logout())}>
                 Logout
               </a>
@@ -232,6 +277,7 @@ export default function Navbar() {
             </StyledBadge>
           </IconButton>
         </div>
+        <ToastContainer />
       </div>
     </div>
   );
