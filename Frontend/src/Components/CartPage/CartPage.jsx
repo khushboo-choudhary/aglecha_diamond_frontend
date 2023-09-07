@@ -4,7 +4,7 @@ import "./CartPage.css";
 import { deleteItemCart } from "../../Redux/Cart/Action";
 import { useNavigate } from "react-router-dom";
 import { addCart, removeOneCart } from "../../Redux/Cart/Action";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Button from "@mui/material/Button";
 
@@ -16,7 +16,7 @@ export default function CartPage() {
   var total = 0;
 
   for (var i = 0; i < data.length; i++) {
-    total += data[i].price.sp * data[i].qty;
+    total += data[i]?.price?.sp * data[i]?.qty;
   }
   const dispatch = useDispatch();
 
@@ -66,8 +66,11 @@ export default function CartPage() {
               <p className="heading">Total</p>
             </div>
           </div>
-          {data.map((e) => (
-            <div className="CartProdHeading IndividualProdCart">
+          {data.map((e, index) => (
+            <div
+              className="CartProdHeading IndividualProdCart"
+              key={e._id || index}
+            >
               <div
                 onClick={() => {
                   navigate(`/${e.tag}/${e._id}`);
@@ -83,7 +86,7 @@ export default function CartPage() {
                 <p>{e.description}</p>
               </div>
               <div>
-                <p>₹ {e.price.sp}</p>
+                <p>₹ {e.price?.sp}</p>
               </div>
               <div>
                 <div className="CartQuantityIncDec">
@@ -104,7 +107,7 @@ export default function CartPage() {
                 </div>
               </div>
               <div>
-                <p>₹ {e.qty * e.price.sp}</p>
+                <p>₹ {e.qty * e.price?.sp}</p>
               </div>
             </div>
           ))}
@@ -120,22 +123,25 @@ export default function CartPage() {
 
           <div className="UpdateANDcoupon">
             <div
-              class="hbtn hb-fill-right-br"
+              className="hbtn hb-fill-right-br"
               onClick={() => navigate("/cart")}
             >
               <p>Update Cart</p>
             </div>
-            <div class="hbtn hb-fill-right-br">
+            <div className="hbtn hb-fill-right-br">
               <p>Apply Coupon</p>
             </div>
           </div>
 
           <div className="Checkout">
-            <div class="hbtn hb-fill-right-br" onClick={() => navigate("/")}>
+            <div
+              className="hbtn hb-fill-right-br"
+              onClick={() => navigate("/")}
+            >
               <p>Continue Shoping</p>
             </div>
             <div
-              class="hbtn hb-fill-right-br"
+              className="hbtn hb-fill-right-br"
               onClick={() => navigate("/contact")}
             >
               <p>Proceed to checkout</p>
@@ -167,7 +173,7 @@ export default function CartPage() {
         </div>
       )}
 
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </div>
   );
 }
