@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,15 +11,13 @@ import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";
 import Tooltip from "@mui/material/Tooltip";
 import { logout } from "../../Redux/LoginUserData/Action";
+import { logouts } from "../../Redux/GoogleUserData/Action";
 import { getData } from "../../Redux/CategoryData/Action";
 import { searchData } from "../../Redux/SearchData/Action";
 import { setUser } from "../../Redux/GoogleUserData/Action";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
-import { useState } from "react";
 import { debounce } from "lodash";
 import { useLocation } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
@@ -35,62 +33,45 @@ export default function Navbar() {
   const navigate = useNavigate();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  // const [authenticate, setAuthenticate] = useState(false);
-  // console.log("frdndkjhwfiu", searchParams);
   const userName = searchParams.get("name");
   const profileImage = searchParams.get("profile");
   const { id } = useParams();
   const cart = useSelector((store) => store.cart.cart);
   const wishlist = useSelector((store) => store.cart.wishlist);
-
   const userLogData = useSelector((store) => store.loginUserData.userData);
-
-  // const userName = useSelector((store) => store.loginUserData.userName);
-
-  // const profileImage = useSelector((store) => store.loginUserData.profileImage);
-  console.log("hyfyfbnavbar", userLogData);
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
-  const checkingGoogle = useSelector((store) => store.userData);
-  console.log("-==-wqod-=192", checkingGoogle);
   const googleUser = useSelector((store) => store.userData.name);
   const googleImage = useSelector((store) => store.userData.profileImage);
   const isAuthenticate = useSelector((store) => store.userData.isAuthenticate);
-  console.log("ndksdihiuh", isAuthenticate);
-  // const searchParams = new URLSearchParams(location.search);
-  // const token = searchParams.get("token");
-  // const userName = searchParams.get("name");
-  // const profileImage = searchParams.get("profile");
-
-  useEffect(() => {
-    if (userName && profileImage) {
-      toast.info("Google authentication successful!");
-      // toast("Google authentication successful!");
-      dispatch(setUser(userName, profileImage));
-    }
-    console.log(
-      "--------------------",
-      userName,
-      "=============",
-      profileImage
-    );
-    alert("Google authentication successful!");
-  }, [dispatch, userName, profileImage]);
-
-  // console.log("=[=", authenticate);
-  const data = useSelector((store) => store.categoryReducer.categoryData[0]);
-  const loading = useSelector((store) => store.categoryReducer.loading);
-
   const searchResults = useSelector((state) => state.searchReducer.searchData);
   const loadings = useSelector((state) => state.searchReducer.loading);
-
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchValue, setSearchValue] = useState([]); // State for search results
+  const [load, setLoad] = useState(false);
+
+  // console.log("checking store value", userLogData);
+  useEffect(() => {
+    if (userName && profileImage) {
+      dispatch(setUser(userName, profileImage));
+    }
+  }, [dispatch, userName, profileImage]);
 
   const debouncedSearch = debounce((query) => {
     if (query.trim() === "") {
       alert("Please enter a search term");
       return;
     }
-    dispatch(searchData(query));
+
+    setLoad(true);
+    dispatch(searchData(query))
+      .then((results) => {
+        setSearchValue(results);
+        setLoad(false);
+      })
+      .catch((error) => {
+        console.error("Error searching:", error);
+        setLoad(false);
+      });
   }, 300);
 
   const handleSearch = () => {
@@ -101,7 +82,26 @@ export default function Navbar() {
 
   const handleProductClick = (result) => {
     navigate(`/${result.tag}/${result._id}`);
+    // After clicking a result, clear the search term and results.
+    setSearchTerm("");
+    setSearchValue([]);
   };
+
+  useEffect(() => {
+    // Add an event listener to the document to close the search results
+    // when clicking anywhere on the page.
+    const closeSearchResults = () => {
+      setSearchTerm("");
+      setSearchValue([]);
+    };
+
+    document.addEventListener("click", closeSearchResults);
+
+    return () => {
+      // Remove the event listener when the component unmounts.
+      document.removeEventListener("click", closeSearchResults);
+    };
+  }, [searchValue]);
 
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -161,39 +161,46 @@ export default function Navbar() {
             placeholder="Search....."
             className="searchInput"
             onChange={(e) => setSearchTerm(e.target.value)}
+            onClick={(e) => e.stopPropagation()}
           />
           {loadings ? (
             <p>Loading...</p>
-          ) : searchResults.length > 0 && searchTerm !== "" ? (
-            <div className="searchResultsDropdown">
-              {searchResults.map((result) => (
-                <div
-                  className="productCard"
-                  onClick={() => handleProductClick(result)}
-                  key={result._id}
-                >
-                  <div className="productImageWrapper">
-                    <img
-                      src={result.image}
-                      alt={result.description}
-                      className="productImage"
-                    />
-                  </div>
-                  <div className="productDetails">
-                    <h3 className="productTag">
-                      {capitalizeFirstLetter(result.tag)}
-                    </h3>
-                    <p className="productName">{result.description}</p>
-                    <p className="productPrice">Price: ₹{result.price.sp}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           ) : (
-            searchTerm !== "" && <p className="noResults">No results found.</p>
+            searchTerm !== "" && (
+              <div className="searchResultsDropdown">
+                {searchResults.length > 0 ? (
+                  searchResults.map((result) => (
+                    <div
+                      className="productCard"
+                      onClick={() => handleProductClick(result)}
+                      key={result._id}
+                    >
+                      <div className="productImageWrapper">
+                        <img
+                          src={result.image}
+                          alt={result.description}
+                          className="productImage"
+                        />
+                      </div>
+                      <div className="productDetails">
+                        <h3 className="productTag">
+                          {capitalizeFirstLetter(result.tag)}
+                        </h3>
+                        <p className="productName">{result.description}</p>
+                        <p className="productPrice">
+                          Price: ₹{result.price.sp}
+                        </p>
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <p className="noResults">No results found.</p>
+                )}
+              </div>
+            )
           )}
         </div>
-        {/* {console.log("checking the profileImage ", profileImage)} */}
+
         {isAuth || isAuthenticate === true ? (
           <div className="dropdown">
             <Chip
@@ -209,14 +216,17 @@ export default function Navbar() {
 
             <div className="dropdownInside">
               <a href="/">Hello, {userLogData[0]?.name || googleUser}</a>
-              <a href="/" onClick={() => dispatch(logout())}>
+              <a
+                href="/"
+                onClick={() => dispatch(logout() || dispatch(logouts()))}
+              >
                 Logout
               </a>
             </div>
           </div>
         ) : (
           <div>
-            <div class="dropdown">
+            <div className="dropdown">
               <div className="name" onClick={() => navigate("/register")}>
                 {" "}
                 <Chip
@@ -230,54 +240,52 @@ export default function Navbar() {
         )}
 
         {/* whislist */}
-        <div onClick={() => navigate("/wishlist")}>
-          <IconButton aria-label="wishlist">
-            <StyledBadge badgeContent={wishlist.length} color="primary">
-              <Tooltip
-                title={
-                  <span
-                    style={{
-                      fontSize: "15px",
-                      fontWeight: "bolder",
-                    }}
-                  >
-                    Wishlist
-                  </span>
-                }
-                arrow
-                style={{ color: "blue" }}
-              >
-                <IconButton>
-                  {" "}
-                  <FavoriteBorderIcon />
-                </IconButton>
-              </Tooltip>
-            </StyledBadge>
-          </IconButton>
-        </div>
+        <Tooltip
+          title={
+            <span
+              style={{
+                fontSize: "15px",
+                fontWeight: "bolder",
+              }}
+            >
+              Wishlist
+            </span>
+          }
+          arrow
+          style={{ color: "blue" }}
+        >
+          <div onClick={() => navigate("/wishlist")}>
+            <IconButton aria-label="wishlist">
+              <StyledBadge badgeContent={wishlist.length} color="error">
+                <FavoriteBorderIcon style={{ color: "blue" }} />
+              </StyledBadge>
+            </IconButton>
+          </div>
+        </Tooltip>
 
         {/* cart item */}
-        <div onClick={() => navigate("/cart")}>
-          <IconButton aria-label="cart">
-            <StyledBadge badgeContent={cart.length} color="primary">
-              <Tooltip
-                arrow
-                title={
-                  <span style={{ fontSize: "15px", fontWeight: "bolder" }}>
-                    Cart
-                  </span>
-                }
-                style={{ color: "blue" }}
-              >
-                <IconButton>
-                  {" "}
-                  <ShoppingCartIcon />
-                </IconButton>
-              </Tooltip>
-            </StyledBadge>
-          </IconButton>
-        </div>
-        <ToastContainer />
+        <Tooltip
+          title={
+            <span
+              style={{
+                fontSize: "15px",
+                fontWeight: "bolder",
+              }}
+            >
+              Cart
+            </span>
+          }
+          arrow
+          style={{ color: "blue" }}
+        >
+          <div onClick={() => navigate("/cart")}>
+            <IconButton aria-label="cart">
+              <StyledBadge badgeContent={cart.length} color="error">
+                <ShoppingCartIcon style={{ color: "blue" }} />
+              </StyledBadge>
+            </IconButton>
+          </div>
+        </Tooltip>
       </div>
     </div>
   );

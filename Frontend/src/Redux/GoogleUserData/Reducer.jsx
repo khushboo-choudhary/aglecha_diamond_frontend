@@ -14,6 +14,13 @@ export const userReducer = (state = initialState, action) => {
         name: action.payload.name,
         profileImage: action.payload.profileImage,
       };
+    case "LOGOUT":
+      return {
+        ...state,
+        isAuthenticate: false,
+        name: "",
+        profileImage: "",
+      };
     default:
       return state;
   }
