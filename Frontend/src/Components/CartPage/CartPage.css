@@ -4,12 +4,10 @@
   padding-top: 2%;
 }
 
-
-.heading{
-  color:blue;
+.heading {
+  color: blue;
   font-size: 20px;
   font-weight: 900;
-  
 }
 .CartProdHeading {
   display: flex;
@@ -17,7 +15,6 @@
 }
 
 .CartProdHeading > div:nth-child(1) {
-
   width: 130%;
   text-align: start;
   padding-left: 1%;
@@ -26,11 +23,9 @@
   width: 400px;
 }
 .CartProdHeading > div:nth-child(3) {
-  
   width: 400px;
 }
 .CartProdHeading > div:nth-child(4) {
- 
   width: 400px;
 }
 
@@ -43,30 +38,24 @@
   padding-top: 2%;
 }
 .IndividualProdCart > div:nth-child(1) {
-  
   width: 300px;
   height: 100px;
 }
 .IndividualProdCart > div:nth-child(1) > img {
-  
   width: 100%;
   height: 100%;
 }
 
 .IndividualProdCart > div:nth-child(2) {
-  
   width: 100%;
 }
 .IndividualProdCart > div:nth-child(3) {
- 
   width: 400px;
 }
 .IndividualProdCart > div:nth-child(4) {
- 
   width: 400px;
 }
 .IndividualProdCart > div:nth-child(5) {
-
   width: 400px;
 }
 
@@ -79,18 +68,15 @@
   margin-left: 23%;
 }
 .CartQuantityIncDec > div {
- 
   width: 70px;
   height: 100%;
 }
 .CartQuantityIncDec > div:nth-child(1) {
-  
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .CartQuantityIncDec > div:nth-child(2) > div {
-  
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px,
     rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
   width: 97%;
@@ -107,18 +93,15 @@
   padding-top: 5%;
   font-size: small;
   cursor: pointer;
- 
 }
 
 .UpdateANDcoupon {
   margin-top: 3%;
   display: flex;
   justify-content: space-evenly;
- 
 }
 
 .UpdateANDcoupon > div {
-  
   font-weight: bold;
   border-radius: 10px;
   font-size: 18px;
@@ -127,11 +110,9 @@
   width: 160px;
   height: 50px;
   padding: 0%;
-
 }
 
 .SubTotalDiv {
-  
   display: flex;
   justify-content: flex-end;
   color: black;
@@ -139,11 +120,9 @@
   border-bottom: 1px solid rgb(125, 115, 115);
   padding-bottom: 2%;
   padding-top: 2%;
-
 }
 
 .SubTotalDiv > div:nth-child(1) {
-  
   margin-right: 18%;
   color: blue;
   font-size: 20px;
@@ -151,9 +130,7 @@
 }
 
 .SubTotalDiv > div:nth-child(2) {
- 
   margin-right: 6.5%;
-  
 }
 
 .Checkout {
@@ -161,7 +138,6 @@
   padding-top: 3%;
 }
 .Checkout > div {
-  
   font-weight: bold;
   border-radius: 25px;
   background-color: blue;
@@ -178,13 +154,12 @@
 
 .EmptyCart p {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    font-weight: bolder;
-    font-size: 180%;
-    color: blue;
+  font-weight: bolder;
+  font-size: 180%;
+  color: blue;
 }
 
 .ContinueShoppingButton {
-  /* border-radius: 20px; */
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }

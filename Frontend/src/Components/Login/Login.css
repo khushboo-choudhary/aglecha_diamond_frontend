@@ -1,32 +1,37 @@
-.loginHeading{
-    color: navy;
-    font-weight: bold;
-    font-size: 20px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    width: 500px;
-    margin: auto;
-    margin-top: 100px;
-    padding-bottom: 5%;
-    background-image:url("https://img.freepik.com/free-vector/abstract-triangular-background-gray-geometric-polygonal-pattern_434359-289.jpg?size=626&ext=jpg");
+.loginHeading {
+  color: navy;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  width: 500px;
+  margin: auto;
+  margin-top: 100px;
+  padding-bottom: 5%;
+  background-image: url("https://img.freepik.com/free-vector/abstract-triangular-background-gray-geometric-polygonal-pattern_434359-289.jpg?size=626&ext=jpg");
 }
-.logo{
-    width: 80px;
-    height: 70px;
-    margin-top: 20px;
-    border-radius: 50%;
-    
+.logo {
+  width: 80px;
+  height: 70px;
+  margin-top: 20px;
+  border-radius: 50%;
 }
-#logopng{
-    display: flex;
+#logopng {
+  display: flex;
   width: 200px;
   margin: auto;
- 
 }
-.ButtonDiv{
-    width:40ch;
-   height: 50px;
+.ButtonDiv {
+  width: 40ch;
+  height: 50px;
 }
-#color1,#color2{
-    color: navy;
-    font-weight: bold;
+#color1
+{
+  color: navy;
+  font-weight: bold;
+}
+#color2 {
+  color: navy;
+  font-weight: bold;
 }

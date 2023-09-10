@@ -49,7 +49,6 @@ export default function CartPage() {
           <span> Cart </span>
         </p>
       </div>
-
       {data.length !== 0 ? (
         <div className="CartPage">
           <div className="CartProdHeading">
@@ -172,8 +171,6 @@ export default function CartPage() {
           </div>
         </div>
       )}
-
-      {/* <ToastContainer /> */}
     </div>
   );
 }
