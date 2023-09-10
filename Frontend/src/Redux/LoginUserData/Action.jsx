@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const LOGIN_LOADING = "LOGIN_LOADING";
@@ -29,15 +29,13 @@ export const login = (data) => (dispatch) => {
   dispatch(loginLoading());
 
   axios
-    .post("https://glamorous-frog-cummerbund.cyclic.cloud/login", data)
+    .post("https://fancy-dove-stockings.cyclic.cloud/login", data)
     .then((res) => {
-      console.log("logim", res);
-      console.log("---------------------");
       dispatch(loginSuccess(res.data));
-      toast.success("Login Successfully");
+      toast("Login Successfull! 👐");
     })
     .catch((error) => {
-      alert(error.response.data.message);
+      toast.error(error.response?.data?.message || "Login failed");
       dispatch(loginFailure());
     });
 };
@@ -45,16 +43,13 @@ export const login = (data) => (dispatch) => {
 export const register = (data) => (dispatch) => {
   dispatch(loginLoading());
   axios
-    .post("https://glamorous-frog-cummerbund.cyclic.cloud/register", data)
+    .post("https://fancy-dove-stockings.cyclic.cloud/register", data)
     .then((res) => {
-      console.log("regiter", res);
-      console.log("===============");
       dispatch(loginSuccess(res.data));
-      toast.success("Register Successfully");
+      toast("Registration Successfull! 👐");
     })
     .catch((error) => {
-      alert(error.response.data.message);
+      toast.error(error.response?.data?.message || "Registration failed");
       dispatch(loginFailure());
     });
 };
-<ToastContainer />;

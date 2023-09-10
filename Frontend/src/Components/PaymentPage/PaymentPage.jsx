@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { emptyCart } from "../../Redux/Cart/Action";
+import Button from "@mui/material/Button";
 
 export default function PaymentPage() {
   const navigate = useNavigate();
@@ -36,10 +37,11 @@ export default function PaymentPage() {
 
       handler: async (response) => {
         try {
-          const verifyUrl = "http://localhost:2345/api/payment/verify";
+          const verifyUrl =
+            "https://fancy-dove-stockings.cyclic.cloud/api/payment/verify";
           const { data } = await axios
             .post(verifyUrl, response)
-            .then((res) => console.log("after Payment"))
+            .then((res) => console.log("after Payment", res))
             .catch((error) => {
               navigate("/successful");
               dispatch(emptyCart());
@@ -59,7 +61,8 @@ export default function PaymentPage() {
 
   const handlePayment = async () => {
     try {
-      const orderUrl = "http://localhost:2345/api/payment/orders";
+      const orderUrl =
+        "https://fancy-dove-stockings.cyclic.cloud/api/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: 400 });
       console.log(data);
       initPayment(data.data);
@@ -86,7 +89,7 @@ export default function PaymentPage() {
               <p className="totolAmt">Bank Offer</p>
             </div>
             <div>
-              <p>
+              <p className="bolder">
                 10% off Instant Discount on Kotak Debit Cards on a min spend of
                 Rs.3,000. TCA
               </p>
@@ -135,14 +138,23 @@ export default function PaymentPage() {
                   <input
                     type="text"
                     placeholder="Mobile Number"
-                    maxlength="10"
+                    maxLength="10"
                     value={Mobilenumber}
                     onChange={(e) => handleAddNumber(e)}
                   />
                 </div>
 
                 <div>
-                  <button onClick={handlePayment}>Pay Now</button>
+                  <Button
+                    className="Button"
+                    onClick={handlePayment}
+                    disabled={Mobilenumber.length !== 10}
+                    color="secondary"
+                    variant="contained"
+                  >
+                    <img className="razor" src="razorpay icon.png" alt="" />
+                    Pay Now
+                  </Button>
                 </div>
               </div>
             </div>
@@ -171,16 +183,16 @@ export default function PaymentPage() {
 
               <div className="ProductFlex">
                 <div>
-                  <p>Total MRP</p>
+                  <p className="bolder">Total MRP</p>
                 </div>
                 <div>
-                  <p>₹{totalMRP}</p>
+                  <p className="bolder">₹{totalMRP}</p>
                 </div>
               </div>
 
               <div className="ProductFlex">
                 <div>
-                  <p>Discount on MRP</p>
+                  <p className="bolder">Discount on MRP</p>
                 </div>
                 <div className="greenText">
                   <p>-₹{discountMRP}</p>
@@ -189,7 +201,7 @@ export default function PaymentPage() {
 
               <div className="ProductFlex marginBtm">
                 <div>
-                  <p>
+                  <p className="bolder">
                     Convenience Fee{" "}
                     <span className="redText">&nbsp;&nbsp; Know More</span>{" "}
                   </p>
@@ -204,10 +216,10 @@ export default function PaymentPage() {
 
               <div className="ProductFlex totolAmt">
                 <div>
-                  <p>Total Amount</p>
+                  <p className="bolder">Total Amount</p>
                 </div>
                 <div>
-                  <p>₹{totalMRP - discountMRP}</p>
+                  <p className="bolder">₹{totalMRP - discountMRP}</p>
                 </div>
               </div>
             </div>
@@ -224,8 +236,12 @@ export default function PaymentPage() {
 
           {shippingAddress.length === undefined ? (
             <div className="ShippingAddress">
-              <div className="totolAmt">
-                <p>{shippingAddress.name}</p>
+              <div className="priceDiv" style={{ textAlign: "center" }}>
+                <p>CUSTOMER ADDRESS</p>
+              </div>
+              <div>
+                <span className="totolAmt">Name:</span>{" "}
+                <span>{shippingAddress.name}</span>
               </div>
 
               <div>
@@ -248,8 +264,9 @@ export default function PaymentPage() {
                 <p>{shippingAddress.pincode}</p>
               </div>
 
-              <div className="totolAmt">
-                <p>{shippingAddress.mobile}</p>
+              <div>
+                <span className="totolAmt">Mobile No:</span>{" "}
+                <span>{shippingAddress.mobile}</span>
               </div>
             </div>
           ) : (

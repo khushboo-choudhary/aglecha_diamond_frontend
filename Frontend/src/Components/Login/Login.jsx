@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import GoogleIcon from "@mui/icons-material/Google";
 import { useNavigate } from "react-router-dom";
@@ -13,17 +12,15 @@ import { login } from "../../Redux/LoginUserData/Action";
 
 const styles = {
   "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
-    border: "1px solid green", // Change the outline color to red (you can use any color you want)
+    border: "1px solid green",
   },
   label: {
-    fontWeight: "bold", // Apply bold font weight
+    fontWeight: "bold",
     fontSize: "16px",
-    // fontweight: "bolder",
-    fontFamily: "Arial, sans-serif", // Change the label color
+    fontFamily: "Arial, sans-serif",
   },
   input: {
-    // border: "1px solid green", // Change the border color
-    borderRadius: "8px", // Add border radius if desired
+    borderRadius: "8px",
   },
 };
 export default function Login() {
@@ -42,9 +39,19 @@ export default function Login() {
     dispatch(login(data));
   };
 
-  if (isAuth === true) {
-    return navigate("/");
-  }
+  useEffect(() => {
+    // Use the useEffect hook to navigate once the component has rendered
+    if (isAuth === true) {
+      navigate("/");
+    }
+  }, [isAuth, navigate]);
+
+  const performGoogle = () => {
+    window.open(
+      "https://fancy-dove-stockings.cyclic.cloud/auth/google",
+      "_self"
+    );
+  };
 
   return (
     <div className="loginHeading">
@@ -62,15 +69,18 @@ export default function Login() {
           autoComplete="off"
         >
           <TextField
+            id="color1"
             label="Email"
             variant="outlined"
+            type="email"
             focused
             InputLabelProps={{
-              style: styles.label, // Apply the custom label styles
+              style: styles.label,
             }}
             InputProps={{
-              style: styles.input, // Apply the custom input styles
+              style: styles.input,
             }}
+            pattern="/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/"
             onChange={(e) => setUseremail(e.target.value)}
           />
           <br />
@@ -79,12 +89,11 @@ export default function Login() {
             id="color2"
             label="Password"
             variant="outlined"
-            // color="success".
             InputLabelProps={{
-              style: styles.label, // Apply the custom label styles
+              style: styles.label,
             }}
             InputProps={{
-              style: styles.input, // Apply the custom input styles
+              style: styles.input,
             }}
             type="password"
             inputProps={{ maxLength: 6 }}
@@ -120,13 +129,7 @@ export default function Login() {
             className="ButtonDiv"
             variant="contained"
             color="success"
-            onClick={() =>
-              window.open(
-                "http://localhost:2345/auth/google",
-                // "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
-                "_self"
-              )
-            }
+            onClick={() => performGoogle()}
           >
             {" "}
             <GoogleIcon />
@@ -134,7 +137,6 @@ export default function Login() {
           </Button>
         </Box>
       </div>
-      <ToastContainer />
     </div>
   );
 }

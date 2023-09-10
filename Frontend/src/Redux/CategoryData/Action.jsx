@@ -20,7 +20,7 @@ export const dataFailure = () => ({
 export const getData = (data) => (dispatch) => {
   dispatch(dataLoading());
   axios
-    .get(`http://localhost:2345/product/${data.id}`, {
+    .get(`https://fancy-dove-stockings.cyclic.cloud/product/${data.id}`, {
       params: {
         sorting: data.sortby,
         sizes_like: data.size,

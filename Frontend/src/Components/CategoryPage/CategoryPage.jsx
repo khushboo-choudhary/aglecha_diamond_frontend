@@ -14,7 +14,7 @@ import { getData } from "../../Redux/CategoryData/Action";
 import { pink } from "@mui/material/colors";
 import { HashLoader } from "react-spinners";
 import { toast } from "react-toastify";
-import { addWishlist } from "../../Redux/Cart/Action";
+import { addCart, addWishlist } from "../../Redux/Cart/Action";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 
 export default function CategoryPage() {
@@ -24,7 +24,13 @@ export default function CategoryPage() {
   const wishlist = useSelector((store) => store.cart.wishlist);
   const data = useSelector((store) => store.categoryReducer.categoryData[0]);
   const loading = useSelector((store) => store.categoryReducer.loading);
+  const cart = useSelector((store) => store.cart.cart);
+  const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
+  const isAuthenticate = useSelector((store) => store.userData.isAuthenticate);
   const [isWishlist, setIsWishlist] = useState({});
+
+  console.log("ghjgahdffDWDCS", isAuthenticate);
+  console.log("jbjgahgdhfwda", isAuth);
   const handleAddWishlist = (e) => {
     const existingItem = wishlist.find((x) => x._id === e);
     if (existingItem) {
@@ -58,6 +64,28 @@ export default function CategoryPage() {
     };
     dispatch(getData(dataSend));
   }, [id, sortby, discount, rating, dispatch]);
+
+  const handleAddCart = (e) => {
+    const productInCart = cart.find((item) => item._id === e._id);
+
+    if (productInCart) {
+      // Product is already in the cart, increase its quantity
+      const updatedProduct = {
+        ...productInCart,
+        qty: productInCart.qty + 1,
+      };
+      dispatch(addCart(updatedProduct));
+      toast.info("Product quantity increased in the cart.");
+    } else {
+      // Product not found in the cart, add it with qty: 1
+      const productToAdd = {
+        ...data.find((item) => item._id === e._id),
+        qty: 1,
+      };
+      dispatch(addCart(productToAdd));
+      toast.success("Product Added To The Cart Successfully.");
+    }
+  };
 
   return (
     <div className="CategoryPageMain">
@@ -276,7 +304,7 @@ export default function CategoryPage() {
           {data && loading === false ? (
             <>
               {data.map((e) => (
-                <div className="IndividualProd imgpro">
+                <div className="IndividualProd imgpro" key={e._id}>
                   <div
                     className="IndividualProdImg"
                     onClick={() => {
@@ -286,8 +314,15 @@ export default function CategoryPage() {
                     <img src={e.image} alt="" />
                   </div>
                   <div
-                    onClick={() => handleAddWishlist(e._id)}
+                    onClick={() => {
+                      if (!isAuth && !isAuthenticate) {
+                        navigate("/login");
+                        return;
+                      }
+                      handleAddWishlist(e._id);
+                    }}
                     className="HeartShape"
+                    diabled={!isAuth}
                   >
                     {isWishlist[e._id] ? (
                       <FavoriteIcon sx={{ fontSize: 30, color: pink[500] }} />
@@ -313,7 +348,19 @@ export default function CategoryPage() {
                         {e.customer_rating}
                       </Button>
                     </p>
-                    <button className="IndividualProdBuyNow">BUY NOW</button>
+                    <button
+                      className="IndividualProdBuyNow"
+                      onClick={() => {
+                        if (!isAuth && !isAuthenticate) {
+                          navigate("/login");
+                          return;
+                        }
+                        handleAddCart(e);
+                      }}
+                      diabled={!isAuth}
+                    >
+                      BUY NOW
+                    </button>
                   </div>
                 </div>
               ))}

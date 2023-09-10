@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import "./ProductDescriptionPage.css";
 import { addCart, addWishlist } from "../../Redux/Cart/Action";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { HashLoader } from "react-spinners";
 import Button from "@mui/material/Button";
@@ -19,11 +19,12 @@ export default function ProductDescriptionPage() {
   const cart = useSelector((store) => store.cart.cart);
   const wishlist = useSelector((store) => store.cart.wishlist);
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
+  const isAuthenticate = useSelector((store) => store.userData.isAuthenticate);
 
   useEffect(() => {
     if (id)
       axios
-        .get(`http://localhost:2345/product/id/${id}`)
+        .get(`https://fancy-dove-stockings.cyclic.cloud/product/id/${id}`)
         .then((res) => setData(res.data));
   }, [id]);
 
@@ -31,10 +32,10 @@ export default function ProductDescriptionPage() {
     const existingProduct = cart.find((item) => item._id === data._id);
     if (existingProduct) {
       dispatch(addCart(existingProduct));
-      toast.info("Product quantity increased in the cart.");
+      toast.info("Product quantity increased in the cart. 🛒");
     } else {
       dispatch(addCart({ ...data, qty: 1 }));
-      toast.success("Product Added To The Cart Successfully.");
+      toast.success("Product Added To The Cart Successfully. 🛒");
     }
   };
 
@@ -115,9 +116,9 @@ export default function ProductDescriptionPage() {
 
             <div className="AddButton">
               <button
-                class="hbtn hb-fill-right-br"
+                className="hbtn hb-fill-right-br"
                 onClick={() => {
-                  if (!isAuth) {
+                  if (!isAuth && !isAuthenticate) {
                     navigate("/login");
                     return;
                   }
@@ -128,9 +129,9 @@ export default function ProductDescriptionPage() {
                 ADD TO CART
               </button>
               <button
-                class="hbtn hb-fill-right-br-left"
+                className="hbtn hb-fill-right-br-left"
                 onClick={() => {
-                  if (!isAuth) {
+                  if (!isAuth && !isAuthenticate) {
                     navigate("/login");
                     return;
                   }
@@ -150,7 +151,6 @@ export default function ProductDescriptionPage() {
           </div>
         </div>
       )}
-      <ToastContainer />
     </div>
   );
 }
