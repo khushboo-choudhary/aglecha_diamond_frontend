@@ -57,6 +57,20 @@ export default function ConatctDetails() {
     toast.success("Product removed from Cart Successfully");
   };
 
+  const styles = {
+    "& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+      border: "1px solid green",
+    },
+    label: {
+      fontWeight: "bold",
+      fontSize: "16px",
+      fontFamily: "Arial, sans-serif",
+    },
+    input: {
+      borderRadius: "8px",
+    },
+  };
+
   return (
     <div className="ConatctDetailsMain">
       <div className="ConatctDetails">
@@ -77,6 +91,12 @@ export default function ConatctDetails() {
             id="outlined-basic"
             label="Name*"
             variant="outlined"
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => setName(e.target.value)}
           />
           <br />
@@ -86,6 +106,12 @@ export default function ConatctDetails() {
             focused
             label="Mobile No*"
             variant="outlined"
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             value={mobile}
             onChange={(e) => {
               const re = /^[0-9\b]+$/;
@@ -107,6 +133,12 @@ export default function ConatctDetails() {
             label="Pin Code*"
             variant="outlined"
             value={pincode}
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => {
               const re = /^[0-9\b]+$/;
               if (pincode.length <= 5) {
@@ -119,10 +151,16 @@ export default function ConatctDetails() {
           <br />
           <TextField
             id="outlined-basic"
-            label="Address (House No, Building, Street, Area)*"
+            label="Address(Flat No,Street,Area)*"
             variant="outlined"
             color="secondary"
             focused
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => setAddress(e.target.value)}
           />
           <br />
@@ -132,6 +170,12 @@ export default function ConatctDetails() {
             variant="outlined"
             color="secondary"
             focused
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => setLocality(e.target.value)}
           />
           <br />
@@ -141,6 +185,12 @@ export default function ConatctDetails() {
             variant="outlined"
             color="secondary"
             focused
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => setCity(e.target.value)}
           />
           <TextField
@@ -149,6 +199,12 @@ export default function ConatctDetails() {
             variant="outlined"
             color="secondary"
             focused
+            InputLabelProps={{
+              style: styles.label,
+            }}
+            InputProps={{
+              style: styles.input,
+            }}
             onChange={(e) => setState(e.target.value)}
           />
         </Box>
@@ -194,11 +250,11 @@ export default function ConatctDetails() {
           </div>
 
           {data.map((e) => (
-            <div className="CartProdHeading IndividualProdCart">
-              <div onClick={() => navigate(`/${e.tag}/${e.id}`)}>
+            <div className="CartProdHeading IndividualProdCart" key={e._id}>
+              <div onClick={() => navigate(`/${e.tag}/${e._id}`)}>
                 <img src={e.image} alt="" />
               </div>
-              <div onClick={() => navigate(`/${e.tag}/${e.id}`)}>
+              <div onClick={() => navigate(`/${e.tag}/${e._id}`)}>
                 <p>{e.description}</p>
               </div>
               <div>
@@ -230,10 +286,10 @@ export default function ConatctDetails() {
 
           <div className="SubTotalDiv">
             <div>
-              <p>Subtotal</p>
+              <p className="p1">Subtotal</p>
             </div>
             <div>
-              <p>₹ {totalMRP}</p>
+              <p className="p2">₹ {totalMRP}</p>
             </div>
           </div>
         </div>

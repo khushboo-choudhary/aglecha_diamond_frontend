@@ -1,5 +1,3 @@
-// import React, { useEffect, useState } from "react";
-
 import LandingPage from "../LandingPage/LandingPage";
 import Category from "../CategoryOfProducts/Category";
 import { Route, Routes } from "react-router-dom";

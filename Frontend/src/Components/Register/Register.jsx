@@ -16,11 +16,9 @@ const styles = {
   label: {
     fontWeight: "bold", // Apply bold font weight
     fontSize: "16px",
-    // fontweight: "bolder",
     fontFamily: "Arial, sans-serif", // Change the label color
   },
   input: {
-    // border: "1px solid green", // Change the border color
     borderRadius: "8px", // Add border radius if desired
   },
 };
@@ -69,7 +67,6 @@ export default function Register() {
             label="Name*"
             variant="outlined"
             type="text"
-            // color="success"
             InputLabelProps={{
               style: styles.label, // Apply the custom label styles
             }}
@@ -86,12 +83,11 @@ export default function Register() {
             label="Email*"
             variant="outlined"
             type="email"
-            // color="success"
             InputLabelProps={{
-              style: styles.label, // Apply the custom label styles
+              style: styles.label,
             }}
             InputProps={{
-              style: styles.input, // Apply the custom input styles
+              style: styles.input,
             }}
             pattern="/^[a-zA-Z0-9.! #$%&'*+/=? ^_`{|}~-]+@[a-zA-Z0-9-]+(?:\. [a-zA-Z0-9-]+)*$/"
             focused
@@ -105,12 +101,12 @@ export default function Register() {
             variant="outlined"
             type="phone"
             InputLabelProps={{
-              style: styles.label, // Apply the custom label styles
+              style: styles.label,
             }}
             InputProps={{
-              maxLength: 10,
-              style: styles.input, // Apply the custom input styles
+              style: styles.input,
             }}
+            inputProps={{ maxLength: 10 }}
             focused
             onChange={(e) => setMobile(e.target.value)}
           />
@@ -122,13 +118,12 @@ export default function Register() {
             variant="outlined"
             type="password"
             InputLabelProps={{
-              style: styles.label, // Apply the custom label styles
+              style: styles.label,
             }}
             InputProps={{
-              maxLength: 6,
-              style: styles.input, // Apply the custom input styles
+              style: styles.input,
             }}
-            // color="success"
+            inputProps={{ maxLength: 6 }}
             focused
             onChange={(e) => setUserPassword(e.target.value)}
           />{" "}
@@ -165,7 +160,7 @@ export default function Register() {
             color="success"
             onClick={() =>
               window.open(
-                "https://glamorous-frog-cummerbund.cyclic.cloud/auth/google",
+                "https://fancy-dove-stockings.cyclic.cloud/auth/google",
                 "_self"
               )
             }

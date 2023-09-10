@@ -6,6 +6,7 @@ const initState = {
   isAuthenticate: false,
   token: "",
   userName: "",
+  profileImage: "",
   userData: [],
 };
 
@@ -22,7 +23,8 @@ export const loginReducer = (store = initState, { type, payload }) => {
         isAuthenticate: true,
         token: payload.token,
         userData: [payload],
-        // userName: payload.username
+        userName: payload.name,
+        profileImage: payload.profileImage,
       };
 
     case LOGIN_FAILURE:
