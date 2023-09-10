@@ -2,9 +2,28 @@ Aglecha Diamonds
 
 This is My Solo Project got from Masai.
 
+## Test Mode Payments method details for Razor pay
+
+### 1. The test card for payments
+
+## Mastercard
+
+CardNumber: 5267 3181 8797 5449
+CVV: Random CVV
+Expiry Date: Any future date
+
+## Visa
+
+CardNumber: 4111 1111 1111 1111
+CVV: Random CVV
+Expiry Date: Any future date
+
+### 2. UPI Method
+
+1.Test payment success flow using ### success@razorpay.
+2.Test payment failure flow using ### failure@razorpay.
 
 # Getting Started with Create React App
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
