@@ -1,7 +1,5 @@
 Aglecha Diamonds
 
-This is My Solo Project got from Masai.
-
 ## Test Mode Payments method details for Razor pay
 
 ### 1. The test card for payments
