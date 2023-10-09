@@ -38,7 +38,7 @@ export default function PaymentPage() {
       handler: async (response) => {
         try {
           const verifyUrl =
-            "https://fancy-dove-stockings.cyclic.cloud/api/payment/verify";
+            "https://aglecha-backend.onrender.com/api/payment/verify";
           const { data } = await axios
             .post(verifyUrl, response)
             .then((res) => console.log("after Payment", res))
@@ -62,7 +62,7 @@ export default function PaymentPage() {
   const handlePayment = async () => {
     try {
       const orderUrl =
-        "https://fancy-dove-stockings.cyclic.cloud/api/payment/orders";
+        "https://aglecha-backend.onrender.com/api/payment/orders";
       const { data } = await axios.post(orderUrl, { amount: 400 });
       console.log(data);
       initPayment(data.data);

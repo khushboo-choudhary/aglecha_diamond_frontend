@@ -29,7 +29,7 @@ export const login = (data) => (dispatch) => {
   dispatch(loginLoading());
 
   axios
-    .post("https://fancy-dove-stockings.cyclic.cloud/login", data)
+    .post("https://aglecha-backend.onrender.com/login", data)
     .then((res) => {
       dispatch(loginSuccess(res.data));
       toast("Login Successfull! 👐");
@@ -43,7 +43,7 @@ export const login = (data) => (dispatch) => {
 export const register = (data) => (dispatch) => {
   dispatch(loginLoading());
   axios
-    .post("https://fancy-dove-stockings.cyclic.cloud/register", data)
+    .post("https://aglecha-backend.onrender.com/register", data)
     .then((res) => {
       dispatch(loginSuccess(res.data));
       toast("Registration Successfull! 👐");

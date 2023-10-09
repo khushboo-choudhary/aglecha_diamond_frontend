@@ -16,7 +16,7 @@ export default function TrendingProducts() {
 
   useEffect(() => {
     axios
-      .get("https://fancy-dove-stockings.cyclic.cloud/product")
+      .get("https://aglecha-backend.onrender.com/product")
       .then((res) => setData(res.data));
 
     setRandomId1(Math.floor(Math.random() * 10));

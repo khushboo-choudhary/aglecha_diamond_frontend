@@ -22,9 +22,7 @@ export const searchFailure = () => ({
 export const searchData = (searchTerm) => (dispatch) => {
   dispatch(searchLoading());
   axios
-    .get(
-      `https://fancy-dove-stockings.cyclic.cloud/product/search?q=${searchTerm}`
-    )
+    .get(`https://aglecha-backend.onrender.com/product/search?q=${searchTerm}`)
     .then((res) => dispatch(searchSuccess(res.data)))
     .catch((err) => dispatch(searchFailure()));
 };

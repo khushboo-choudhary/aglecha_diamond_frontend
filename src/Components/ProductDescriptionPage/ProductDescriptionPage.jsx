@@ -24,7 +24,7 @@ export default function ProductDescriptionPage() {
   useEffect(() => {
     if (id)
       axios
-        .get(`https://fancy-dove-stockings.cyclic.cloud/product/id/${id}`)
+        .get(`https://aglecha-backend.onrender.com/product/id/${id}`)
         .then((res) => setData(res.data));
   }, [id]);
 

@@ -47,10 +47,7 @@ export default function Login() {
   }, [isAuth, navigate]);
 
   const performGoogle = () => {
-    window.open(
-      "https://fancy-dove-stockings.cyclic.cloud/auth/google",
-      "_self"
-    );
+    window.open("https://aglecha-backend.onrender.com/auth/google", "_self");
   };
 
   return (

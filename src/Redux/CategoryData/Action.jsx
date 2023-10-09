@@ -20,7 +20,7 @@ export const dataFailure = () => ({
 export const getData = (data) => (dispatch) => {
   dispatch(dataLoading());
   axios
-    .get(`https://fancy-dove-stockings.cyclic.cloud/product/${data.id}`, {
+    .get(`https://aglecha-backend.onrender.com/product/${data.id}`, {
       params: {
         sorting: data.sortby,
         sizes_like: data.size,

@@ -160,7 +160,7 @@ export default function Register() {
             color="success"
             onClick={() =>
               window.open(
-                "https://fancy-dove-stockings.cyclic.cloud/auth/google",
+                "https://aglecha-backend.onrender.com/auth/google",
                 "_self"
               )
             }

@@ -28,9 +28,6 @@ export default function CategoryPage() {
   const isAuth = useSelector((store) => store.loginUserData.isAuthenticate);
   const isAuthenticate = useSelector((store) => store.userData.isAuthenticate);
   const [isWishlist, setIsWishlist] = useState({});
-
-  console.log("ghjgahdffDWDCS", isAuthenticate);
-  console.log("jbjgahgdhfwda", isAuth);
   const handleAddWishlist = (e) => {
     const existingItem = wishlist.find((x) => x._id === e);
     if (existingItem) {
