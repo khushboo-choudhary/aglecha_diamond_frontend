@@ -100,103 +100,102 @@ Integrated Google Authentication to allow users to log in using their Google acc
 
 - #### Home Page
 
-<img width="946" alt="diamonds_homepage1" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/0307627f-3b83-47af-92bd-98c743caa67a">
+![home_page](https://user-images.githubusercontent.com/30701525/273791067-0307627f-3b83-47af-92bd-98c743caa67a.png)
 <br/><br/>
 
-<img width="947" alt="diamonds_homeage2" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/31eb0c8e-503e-4c94-ae46-6ed3bd66742e">
+![home_page1](https://user-images.githubusercontent.com/30701525/273791243-31eb0c8e-503e-4c94-ae46-6ed3bd66742e.png)
 <br/><br/>
 
 - #### Trending Collection
 
-<img width="945" alt="diamonds_homepage3" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/cec3c711-6c12-4b39-bdfc-522f3c0e96b8">
+![home_page2](https://user-images.githubusercontent.com/30701525/273791396-cec3c711-6c12-4b39-bdfc-522f3c0e96b8.png)
 <br/><br/>
 
 - #### Diamonds Promises
 
-<img width="947" alt="diamonds_homepage4" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/a3e30eae-dba1-4e72-afba-2b6859be61f8">
+![home_page3](https://user-images.githubusercontent.com/30701525/273791899-a3e30eae-dba1-4e72-afba-2b6859be61f8.png)
 <br/><br/>
 
 - #### Footer Page
-
-<img width="958" alt="diamonds_footerpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/e95bc30f-6c78-49f7-80af-7e26877cdb3d">
+![footer_page](https://user-images.githubusercontent.com/30701525/273792303-e95bc30f-6c78-49f7-80af-7e26877cdb3d.png)
 <br/><br/>
 
 - #### Register Page
 
-<img width="960" alt="diamonds_registerpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/f4bc4b92-211e-477a-b645-950aa3fb6940">
+![register_page](https://user-images.githubusercontent.com/30701525/273792498-f4bc4b92-211e-477a-b645-950aa3fb6940.png)
 <br/><br/>
 
 - #### Login Page
 
-<img width="959" alt="diamonds_loginpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/f367c320-5320-4e1a-a111-33834e7b908d">
+![login_page](https://user-images.githubusercontent.com/30701525/273792874-f367c320-5320-4e1a-a111-33834e7b908d.png)
 <br/><br/>
 
 - #### Product Page
 
-<img width="960" alt="diamonds_productpage1" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/c374ebe4-45a0-4cf9-b5d3-34861d9d72e3">
+![product_page1](https://user-images.githubusercontent.com/30701525/273793055-c374ebe4-45a0-4cf9-b5d3-34861d9d72e3.png)
 <br/><br/>
 
-<img width="959" alt="diamonds_productspage2" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/9143b073-85a4-4d5b-a3ed-ab329e83dff1">
+![product_page2](https://user-images.githubusercontent.com/30701525/273793200-9143b073-85a4-4d5b-a3ed-ab329e83dff1.png)
 <br/><br/>
 
-<img width="957" alt="diamonds_productpage3" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/a3069cc2-edc5-4d46-aea1-65095311433f">
+![product_page3](https://user-images.githubusercontent.com/30701525/273793337-a3069cc2-edc5-4d46-aea1-65095311433f.png)
 <br/><br/>
 
 - #### Product Description Page
 
-<img width="957" alt="diamonds_productdescriptionpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/c20b2ade-f6ee-4544-b0ed-47bd8bfa2580">
+![product_description_page](https://user-images.githubusercontent.com/30701525/273795980-c20b2ade-f6ee-4544-b0ed-47bd8bfa2580.png)
 <br/><br/>
 
 - #### Cart Page
 
-<img width="960" alt="diamonds_cartpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/f80cef2e-0a4c-4ae6-ae5b-4bb9cb138791">
+![cart_page](https://user-images.githubusercontent.com/30701525/273793497-f80cef2e-0a4c-4ae6-ae5b-4bb9cb138791.png)
 <br/><br/>
 
 - #### Wishlist Page
 
-<img width="957" alt="diamonds_wishlistpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/e69970ea-6bc7-4bdd-abdb-8a3173791490">
+![wishlist_page](https://user-images.githubusercontent.com/30701525/273793744-e69970ea-6bc7-4bdd-abdb-8a3173791490.png)
 <br/><br/>
 
 - #### Checkout Page
 
-<img width="959" alt="diamonds_checkoutpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/4cae1b7c-eeec-4c61-9969-79cdb1d1f181">
+![checkout_page](https://user-images.githubusercontent.com/30701525/273796104-4cae1b7c-eeec-4c61-9969-79cdb1d1f181.png)
 <br/><br/>
 
 - #### Payment Page
 
-<img width="960" alt="diamonds_paymentpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/72bc1924-c8d2-4586-a441-826b30eb1853">
+![payment_page](https://user-images.githubusercontent.com/30701525/273796299-72bc1924-c8d2-4586-a441-826b30eb1853.png)
 <br/><br/>
 
 - #### RazorPay Test Mode
 
-<img width="956" alt="diamonds_razorpay1" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/29894167-40ee-430d-876b-007eac83e9b1">
+![razorpay_page1](https://user-images.githubusercontent.com/30701525/273796518-29894167-40ee-430d-876b-007eac83e9b1.png)
 <br/><br/>
 
-<img width="960" alt="diamonds_razorpay2" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/e93df702-da12-430e-84c7-f811400038f5">
+![razorpay_page2](https://user-images.githubusercontent.com/30701525/273796720-e93df702-da12-430e-84c7-f811400038f5.png)
 <br/><br/>
 
-<img width="960" alt="diamonds_razorpay3" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/dd6bcf0d-5786-46ad-87a7-431375e6fc03">
+![razorpay_page3](https://user-images.githubusercontent.com/30701525/273796906-dd6bcf0d-5786-46ad-87a7-431375e6fc03.png)
 <br/><br/>
 
-<img width="950" alt="diamonds_successpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/59f566ea-7d0c-4dd7-bd20-f33707357887">
+![razorpay_page4](https://user-images.githubusercontent.com/30701525/273797045-59f566ea-7d0c-4dd7-bd20-f33707357887.png)
 <br/><br/>
 
-<img width="953" alt="diamonds_processingpage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/82b68153-5a3a-417b-b08d-38720ce62394">
+![razorpay_page5](https://user-images.githubusercontent.com/30701525/273797357-82b68153-5a3a-417b-b08d-38720ce62394.png)
 <br/><br/>
 
 - #### Success Page
 
-<img width="959" alt="diamonds_successpage2" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/3cb47f5f-55bb-42e3-805e-7dda820930dd">
+![success_page](https://user-images.githubusercontent.com/30701525/273797145-3cb47f5f-55bb-42e3-805e-7dda820930dd.png)
 <br/><br/>
 
 - #### ThankYou Page
 
-<img width="959" alt="diamonds_thankyoupage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/8e805c40-9209-410e-85c5-9603ff744fd1">
+![thankyou_page](https://user-images.githubusercontent.com/30701525/273797642-8e805c40-9209-410e-85c5-9603ff744fd1.png)
 <br/><br/>
 
 - #### Failure Page
 
-<img width="960" alt="diamonds_failurepage" src="https://github.com/khushboo-choudhary/aglecha_diamond_frontend/assets/30701525/64b46a19-c40b-4da2-80e4-e741aa71701a">
+![failure_page](https://user-images.githubusercontent.com/30701525/273797906-64b46a19-c40b-4da2-80e4-e741aa71701a.png)
 <br/><br/>
 
 #### Conclusion
