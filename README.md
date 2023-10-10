@@ -3,6 +3,9 @@
 ### Overview
 Aglecha Diamonds is a solo project focused on creating a diamond e-commerce website. The project includes various features like product listings, cart management, and a payment gateway integration using Razorpay in test mode. Additionally, the project implements sorting, filtering, debounce search, and Google Authentication for a seamless user experience.
 
+**You can go through the whole website deployed link is —**
+[https://aglecha-diamond-frontend.vercel.app/](https://aglecha-diamond-frontend.vercel.app/)
+
 ### Technologies Used
 The software and tools we've used to work on the project are:
 1. **Frontend:-** ReactJS, JSX, Redux, MaterialUI
