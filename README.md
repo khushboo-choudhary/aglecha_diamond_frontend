@@ -32,42 +32,47 @@ The software and tools we've used to work on the project are:
 
 ## Implemented Features
 
-#### Sorting
+#### 1. Sorting
 
 Implemented sorting functionality to allow users to sort product listings based on various criteria such as price, popularity, etc.
 
-#### Filtering
+#### 2. Filtering
 
 Added the ability for users to filter products based on specific attributes.
 
-#### Debounce Search
+#### 3. Debounce Search
 
 Implemented debounce search for efficient and real-time search functionality, reducing unnecessary API calls and providing a smoother user search experience.
 
-#### Google Authentication
+#### 4. Google Authentication
 
 Integrated Google Authentication to allow users to log in using their Google accounts, improving the authentication process and enhancing user security.
 
 ## Project Structure and Flow
 
-#### Initialization and Planning
+#### 1. Initialization and Planning
 
 - Setup the project environment and defined the tech stack.
 - Created a roadmap and defined tasks for each aspect of the project.
 
-#### Backend and Frontend Development
+#### 2. Backend and Frontend Development
 
 - Developed both backend and frontend components individually.
 - Focused on backend development first, setting up routes, APIs, and integrating payment gateways.
 
-#### Payment Gateway Integration
+#### 3. Payment Gateway Integration
 
 - Integrated Razorpay payment gateway in test mode.
 - Resolved challenges related to payment gateway documentation and implementation.
 
-#### Integration of Additional Features
+#### 4. Integration of Additional Features
 
 - Added sorting, filtering, debounce search, and Google Authentication to enhance user interaction and security.
+
+#### 5. Testing and Deployment
+
+- Tested the application thoroughly, including payment flows using provided test card details and UPI methods.
+- Deployed the application and resolved platform-specific issues.
 
 ## Challenge Faced
 
@@ -90,11 +95,6 @@ Integrated Google Authentication to allow users to log in using their Google acc
 **5. Deployment**
 
 - Faced various issues during the deployment process.
-
-#### Testing and Deployment
-
-- Tested the application thoroughly, including payment flows using provided test card details and UPI methods.
-- Deployed the application and resolved platform-specific issues.
 
 ## Screen Shots
 
